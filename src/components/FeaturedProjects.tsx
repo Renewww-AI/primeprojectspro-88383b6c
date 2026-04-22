@@ -23,9 +23,11 @@ const FeaturedProjects = () => {
             >
               <img
                 src={p.img}
-                alt={p.badge}
+                alt={`${p.badge} project in ${p.location}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width={1200}
+                height={900}
               />
               <span className="absolute top-4 left-4 bg-card text-charcoal text-xs font-medium px-3 py-1 rounded-full">
                 {p.badge}

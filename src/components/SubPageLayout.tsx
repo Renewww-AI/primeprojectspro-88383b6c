@@ -9,10 +9,11 @@ type Props = {
   title: string;
   intro?: string;
   heroImg?: string;
+  heroAlt?: string;
   children: ReactNode;
 };
 
-const SubPageLayout = ({ eyebrow, title, intro, heroImg, children }: Props) => {
+const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Props) => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -20,7 +21,13 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, children }: Props) => {
       {heroImg ? (
         <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 md:px-6 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt={title} className="w-full h-full object-cover" />
+            <img
+              src={heroImg}
+              alt={heroAlt || title}
+              className="w-full h-full object-cover"
+              width={1600}
+              height={900}
+            />
             <div className="absolute inset-0 bg-near-black/65" />
           </div>
           <div className="relative max-w-4xl mx-auto">

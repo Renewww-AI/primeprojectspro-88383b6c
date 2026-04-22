@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
+import Seo, { breadcrumbJsonLd } from "@/components/Seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FinalCta from "@/components/FinalCta";
@@ -37,8 +38,19 @@ const Blog = () => {
     });
   }, [query, activeCat]);
 
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="The Homeowner's Guide — San Diego Remodeling Blog | Prime Projects"
+        description="Honest, practical articles on planning, hiring, and budgeting home improvement projects across San Diego County."
+        path="/blog"
+        jsonLd={breadcrumb}
+      />
       <Header />
 
       <section className="pt-32 pb-12 px-4 md:px-6 bg-secondary">
@@ -58,6 +70,7 @@ const Blog = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search articles..."
+              aria-label="Search blog articles"
               className="w-full bg-card border border-border rounded-full pl-11 pr-5 py-3 text-sm text-charcoal placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-olive/30"
             />
           </div>
@@ -97,6 +110,7 @@ const Blog = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
+                  aria-label={`Read article: ${post.title}`}
                   className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-md hover:-translate-y-1 transition-all group flex flex-col"
                 >
                   <img
@@ -104,21 +118,21 @@ const Blog = () => {
                     alt={post.heroAlt}
                     className="w-full h-48 object-cover"
                     loading="lazy"
+                    width={800}
+                    height={450}
                   />
                   <div className="p-6 flex flex-col flex-1">
                     <span className="inline-block text-xs uppercase tracking-widest text-brass mb-3">
                       {post.category}
                     </span>
-                    <h3 className="text-lg font-medium text-charcoal mb-2 leading-snug">
+                    <h2 className="text-lg font-medium text-charcoal mb-2 leading-snug">
                       {post.title}
-                    </h3>
+                    </h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                       {post.preview}
                     </p>
                     <div className="flex items-center justify-between mt-auto">
-                      <span className="text-xs text-muted-foreground">
-                        {post.readTime}
-                      </span>
+                      <span className="text-xs text-muted-foreground">{post.readTime}</span>
                       <span className="text-sm font-medium text-olive group-hover:underline">
                         Read More →
                       </span>

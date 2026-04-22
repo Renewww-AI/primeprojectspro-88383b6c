@@ -52,6 +52,10 @@ const HeroSection = () => {
               </span>
             ))}
           </div>
+
+          <p className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
+            Licensed, bonded &amp; insured · Serving San Diego North County · Free consultations
+          </p>
         </div>
 
         {/* Right column - image card */}
