@@ -68,6 +68,7 @@ const Footer = () => {
           <h4 className="text-xs uppercase tracking-widest text-primary-foreground/40 mb-4">Planning</h4>
           <div className="flex flex-col gap-2">
             {[
+              ["The Homeowner's Guide", "/blog"],
               ["ADU Planning", "/planning/adu-cost-san-diego-county"],
               ["Remodel Timelines", "/planning/kitchen-remodel-timeline"],
               ["Roofing Guidance", "/planning/roof-replacement-vs-repair"],

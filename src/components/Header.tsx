@@ -33,15 +33,25 @@ const Header = () => {
         </a>
 
         <nav className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-charcoal hover:text-olive transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.type === "route" ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm text-charcoal hover:text-olive transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-charcoal hover:text-olive transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -75,16 +85,27 @@ const Header = () => {
           >
             ✕
           </button>
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-lg text-charcoal hover:text-olive transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.type === "route" ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-lg text-charcoal hover:text-olive transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-lg text-charcoal hover:text-olive transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a href="tel:6190000000" className="text-brass text-sm mt-4">(619) 000-0000</a>
           <a
             href="#intake"
