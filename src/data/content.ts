@@ -118,7 +118,7 @@ export const services: Service[] = [
   {
     slug: "pool-backyard-projects",
     title: "Pool & Backyard Projects",
-    img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200",
+    img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&q=80",
     alt: "Pool and backyard",
     body: "Bring together hardscape, pool updates, landscape features, and layout improvements with a coordinated backyard vision.",
     intro:
@@ -136,6 +136,69 @@ export const services: Service[] = [
       "Final coordination and walkthrough",
     ],
   },
+  {
+    slug: "home-audio",
+    title: "Home Audio",
+    img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
+    alt: "Modern home audio system in living room",
+    body: "Whole-home audio, media rooms, and integrated sound systems planned for clarity, coverage, and clean installation.",
+    intro:
+      "Home audio works best when speakers, wiring, and controls are planned alongside the room. We coordinate clean installs that look and sound intentional.",
+    highlights: [
+      "Whole-home distributed audio",
+      "Media rooms and theater setups",
+      "In-ceiling and in-wall speakers",
+      "Smart controls and zone management",
+    ],
+    scope: [
+      "System design and zone planning",
+      "Pre-wire and rough-in coordination",
+      "Speaker, amp, and control install",
+      "Tuning, calibration, and walkthrough",
+    ],
+  },
+  {
+    slug: "landscaping",
+    title: "Landscaping",
+    img: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1600&q=80",
+    alt: "Modern residential landscaping",
+    body: "Front and back yard landscape design, planting, irrigation, and hardscape integration for lasting curb appeal.",
+    intro:
+      "Landscape projects are most successful when planting, hardscape, lighting, and irrigation are coordinated up front. We plan yards that hold up year-round.",
+    highlights: [
+      "Front and back yard redesigns",
+      "Drought-tolerant planting plans",
+      "Irrigation and drainage updates",
+      "Hardscape and lighting integration",
+    ],
+    scope: [
+      "Site review and concept direction",
+      "Planting, irrigation, and grading",
+      "Hardscape and lighting installation",
+      "Walkthrough and care guidance",
+    ],
+  },
+  {
+    slug: "general-contractor",
+    title: "General Contractor",
+    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80",
+    alt: "General contractor on residential job site",
+    body: "Whole-home renovations, additions, and multi-trade projects coordinated under a single point of accountability.",
+    intro:
+      "As your general contractor, we coordinate trades, schedule, and quality so larger renovations and additions move forward without the usual friction.",
+    highlights: [
+      "Whole-home renovations",
+      "Room additions and reconfigurations",
+      "Multi-trade project coordination",
+      "Schedule, budget, and quality oversight",
+    ],
+    scope: [
+      "Pre-construction planning",
+      "Trade coordination and scheduling",
+      "On-site quality oversight",
+      "Final walkthrough and punch list",
+    ],
+  },
 ];
 
 export type Location = {
@@ -143,17 +206,75 @@ export type Location = {
   name: string;
   desc: string;
   intro: string;
+  img: string;
+  whyLocal: string;
 };
 
 export const locations: Location[] = [
-  { slug: "san-diego-county", name: "San Diego County", desc: "Full county service area overview", intro: "Prime Projects serves homeowners throughout San Diego County with a focus on premium residential remodeling and additions." },
-  { slug: "oceanside", name: "Oceanside", desc: "North County coastal projects", intro: "Coastal and inland Oceanside homes benefit from durable material choices and thoughtful coastal-aware planning." },
-  { slug: "carlsbad", name: "Carlsbad", desc: "Premium remodeling in Carlsbad", intro: "Carlsbad homeowners look for premium kitchens, baths, ADUs, and outdoor living projects with refined execution." },
-  { slug: "encinitas", name: "Encinitas", desc: "Coastal and inland home upgrades", intro: "Encinitas projects blend coastal character with modern, livable interiors and well-planned outdoor spaces." },
-  { slug: "san-marcos", name: "San Marcos", desc: "Growing community project support", intro: "Growing San Marcos neighborhoods present strong opportunities for kitchen, bath, and ADU upgrades." },
-  { slug: "vista", name: "Vista", desc: "Residential improvement services", intro: "Vista homes are well suited to whole-home upgrades, additions, and outdoor living transformations." },
-  { slug: "del-mar", name: "Del Mar", desc: "Luxury coastal home projects", intro: "Luxury Del Mar properties demand refined materials, careful coordination, and discreet execution." },
-  { slug: "rancho-santa-fe", name: "Rancho Santa Fe", desc: "Estate and premium property work", intro: "Estate-level Rancho Santa Fe projects benefit from senior project oversight and high-end trade partners." },
+  {
+    slug: "san-diego-county",
+    name: "San Diego County",
+    desc: "Full county service area overview",
+    intro: "Prime Projects serves homeowners throughout San Diego County with a focus on premium residential remodeling and additions.",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
+    whyLocal: "We know the permitting nuances, climate considerations, and neighborhood character across San Diego County and tailor every project accordingly.",
+  },
+  {
+    slug: "oceanside",
+    name: "Oceanside",
+    desc: "North County coastal projects",
+    intro: "Coastal and inland Oceanside homes benefit from durable material choices and thoughtful coastal-aware planning.",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
+    whyLocal: "Oceanside's coastal exposure calls for materials and detailing that resist salt air and sun. We plan projects with that longevity in mind.",
+  },
+  {
+    slug: "carlsbad",
+    name: "Carlsbad",
+    desc: "Premium remodeling in Carlsbad",
+    intro: "Carlsbad homeowners look for premium kitchens, baths, ADUs, and outdoor living projects with refined execution.",
+    img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80",
+    whyLocal: "Carlsbad properties span coastal, village, and inland neighborhoods — we adapt scope and finishes to match the home and the street.",
+  },
+  {
+    slug: "encinitas",
+    name: "Encinitas",
+    desc: "Coastal and inland home upgrades",
+    intro: "Encinitas projects blend coastal character with modern, livable interiors and well-planned outdoor spaces.",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+    whyLocal: "Encinitas homes reward thoughtful indoor-outdoor planning. We design for natural light, breeze, and easy flow to the yard.",
+  },
+  {
+    slug: "san-marcos",
+    name: "San Marcos",
+    desc: "Growing community project support",
+    intro: "Growing San Marcos neighborhoods present strong opportunities for kitchen, bath, and ADU upgrades.",
+    img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80",
+    whyLocal: "San Marcos has a strong mix of newer and established homes — we tailor scope to whatever stage your home is in.",
+  },
+  {
+    slug: "vista",
+    name: "Vista",
+    desc: "Residential improvement services",
+    intro: "Vista homes are well suited to whole-home upgrades, additions, and outdoor living transformations.",
+    img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1600&q=80",
+    whyLocal: "Vista's larger lots and varied terrain open up real possibilities for additions, ADUs, and outdoor living investments.",
+  },
+  {
+    slug: "del-mar",
+    name: "Del Mar",
+    desc: "Luxury coastal home projects",
+    intro: "Luxury Del Mar properties demand refined materials, careful coordination, and discreet execution.",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+    whyLocal: "Del Mar projects deserve a quiet, organized job site and senior-level oversight from start to finish.",
+  },
+  {
+    slug: "rancho-santa-fe",
+    name: "Rancho Santa Fe",
+    desc: "Estate and premium property work",
+    intro: "Estate-level Rancho Santa Fe projects benefit from senior project oversight and high-end trade partners.",
+    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80",
+    whyLocal: "Rancho Santa Fe estates require discreet scheduling, senior trades, and the kind of detail-level oversight Prime Projects is built for.",
+  },
 ];
 
 export type Article = {

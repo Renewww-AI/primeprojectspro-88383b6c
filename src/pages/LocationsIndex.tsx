@@ -12,7 +12,7 @@ const LocationsIndex = () => (
       {locations.map((l) => (
         <Link
           key={l.slug}
-          to={`/locations/${l.slug}`}
+          to={`/services/${l.slug}`}
           className="bg-card rounded-2xl p-6 border border-border hover:border-olive transition-all"
         >
           <h3 className="text-lg font-medium text-charcoal mb-1">{l.name}</h3>

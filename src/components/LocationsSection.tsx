@@ -16,7 +16,7 @@ const LocationsSection = () => {
           {locations.map((c) => (
             <Link
               key={c.slug}
-              to={`/locations/${c.slug}`}
+              to={`/services/${c.slug}`}
               className="bg-stone-bg rounded-2xl p-6 border border-border hover:border-olive hover:bg-card transition-all group text-left"
             >
               <h3 className="text-lg font-medium text-charcoal mb-1 group-hover:text-olive transition-colors">
