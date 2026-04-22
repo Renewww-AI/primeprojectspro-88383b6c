@@ -206,13 +206,6 @@ export type Location = {
   name: string;
   desc: string;
   intro: string;
-};
-
-export type Location = {
-  slug: string;
-  name: string;
-  desc: string;
-  intro: string;
   img: string;
   whyLocal: string;
 };
