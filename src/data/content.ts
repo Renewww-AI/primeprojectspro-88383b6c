@@ -410,7 +410,7 @@ export const projects: Project[] = [
     badge: "Roofing",
     location: "Oceanside, CA",
     overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
-    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1400&q=80",
+    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1400&q=80",
     intro: "Complete roof replacement coordinated with fascia, gutter, and trim refresh.",
   },
   {
