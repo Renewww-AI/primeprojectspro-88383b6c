@@ -345,7 +345,7 @@ export const articles: Article[] = [
     slug: "roof-replacement-vs-repair",
     cat: "Roofing",
     title: "What to consider before replacing a roof",
-    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1200",
+    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1200",
     intro: "Roof decisions hinge on age, system condition, and how long you plan to stay in the home.",
     sections: [
       { heading: "Condition assessment", body: "An honest assessment compares localized repairs against full replacement." },
