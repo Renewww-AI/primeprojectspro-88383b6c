@@ -1,33 +1,7 @@
-const projects = [
-  {
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=500",
-    badge: "Kitchen Remodel",
-    location: "Encinitas, CA",
-    overlay: "Coastal kitchen remodel featuring custom cabinetry, quartz countertops, and improved natural light.",
-    h: "h-[320px]",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=700&h=600",
-    badge: "Outdoor Living",
-    location: "Carlsbad, CA",
-    overlay: "Backyard living upgrade with covered patio, built-in BBQ, and hardscape redesign.",
-    h: "h-[400px]",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=400",
-    badge: "Roofing",
-    location: "Oceanside, CA",
-    overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
-    h: "h-[280px]",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=700&h=500",
-    badge: "ADU",
-    location: "North County, CA",
-    overlay: "ADU planning and feasibility project for a 600 sq ft detached unit with separate entrance.",
-    h: "h-[360px]",
-  },
-];
+import { Link } from "react-router-dom";
+import { projects } from "@/data/content";
+
+const heights = ["h-[320px]", "h-[400px]", "h-[280px]", "h-[360px]"];
 
 const FeaturedProjects = () => {
   return (
@@ -41,10 +15,11 @@ const FeaturedProjects = () => {
           design choices, and quality-driven execution.
         </p>
         <div className="columns-1 md:columns-2 gap-6 space-y-6">
-          {projects.map((p) => (
-            <div
-              key={p.badge + p.location}
-              className={`rounded-2xl overflow-hidden relative group cursor-pointer break-inside-avoid ${p.h}`}
+          {projects.map((p, i) => (
+            <Link
+              key={p.slug}
+              to={`/projects/${p.slug}`}
+              className={`block rounded-2xl overflow-hidden relative group cursor-pointer break-inside-avoid ${heights[i % heights.length]}`}
             >
               <img
                 src={p.img}
@@ -64,7 +39,7 @@ const FeaturedProjects = () => {
               <span className="absolute bottom-4 left-4 text-primary-foreground text-xs group-hover:opacity-0 transition-opacity drop-shadow-lg">
                 {p.location}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

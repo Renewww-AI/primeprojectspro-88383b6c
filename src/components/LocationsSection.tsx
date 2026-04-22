@@ -1,13 +1,5 @@
-const cities = [
-  { name: "San Diego County", desc: "Full county service area overview", link: "/locations/san-diego-county/" },
-  { name: "Oceanside", desc: "North County coastal projects", link: "/locations/oceanside/" },
-  { name: "Carlsbad", desc: "Premium remodeling in Carlsbad", link: "/locations/carlsbad/" },
-  { name: "Encinitas", desc: "Coastal and inland home upgrades", link: "/locations/encinitas/" },
-  { name: "San Marcos", desc: "Growing community project support", link: "/locations/san-marcos/" },
-  { name: "Vista", desc: "Residential improvement services", link: "/locations/vista/" },
-  { name: "Del Mar", desc: "Luxury coastal home projects", link: "/locations/del-mar/" },
-  { name: "Rancho Santa Fe", desc: "Estate and premium property work", link: "/locations/rancho-santa-fe/" },
-];
+import { Link } from "react-router-dom";
+import { locations } from "@/data/content";
 
 const LocationsSection = () => {
   return (
@@ -21,25 +13,29 @@ const LocationsSection = () => {
           the level of communication, coordination, and quality the brand promises.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {cities.map((c) => (
-            <a
-              key={c.name}
-              href={c.link}
+          {locations.map((c) => (
+            <Link
+              key={c.slug}
+              to={`/locations/${c.slug}`}
               className="bg-stone-bg rounded-2xl p-6 border border-border hover:border-olive hover:bg-card transition-all group text-left"
             >
-              <h3 className="text-lg font-medium text-charcoal mb-1 group-hover:text-olive transition-colors">{c.name}</h3>
+              <h3 className="text-lg font-medium text-charcoal mb-1 group-hover:text-olive transition-colors">
+                {c.name}
+              </h3>
               <p className="text-xs text-muted-foreground">{c.desc}</p>
-              <span className="text-olive text-sm mt-2 inline-block opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-            </a>
+              <span className="text-olive text-sm mt-2 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
+                →
+              </span>
+            </Link>
           ))}
         </div>
         <div className="mt-10">
-          <a
-            href="/locations/"
+          <Link
+            to="/locations"
             className="border border-olive text-olive rounded-full px-8 py-3 text-sm font-medium hover:bg-olive hover:text-primary-foreground transition-all inline-block"
           >
             View All Service Areas
-          </a>
+          </Link>
         </div>
       </div>
     </section>
