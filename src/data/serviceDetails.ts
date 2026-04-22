@@ -213,8 +213,8 @@ export const serviceDetails: ServiceDetail[] = [
     metaDescription:
       "Roof replacement and gutter coordination in San Diego County — honest assessments, system options, and clean execution with concierge oversight.",
     heroImg:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
-    heroAlt: "Residential roof under tile replacement",
+      "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1600&q=80",
+    heroAlt: "Roofer working on a residential rooftop installing shingles",
     intro:
       "Roofing is the one project where 'looks fine from the ground' costs the most over time. The right call usually comes down to honest condition information, not aggressive sales pressure.",
     body: [
