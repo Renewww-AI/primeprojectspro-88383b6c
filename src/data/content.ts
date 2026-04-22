@@ -229,16 +229,6 @@ export const services: Service[] = [
     highlights: ["Load calculations", "Furnace and AC replacement", "Duct repair and sealing", "Mini-split and zoning"],
     scope: ["Assessment and sizing", "Equipment order", "Install", "Commissioning and balancing"],
   },
-  {
-    slug: "additions-adus",
-    title: "Additions & ADUs",
-    img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=80",
-    alt: "Detached ADU exterior",
-    body: "Additions and ADUs planned with feasibility, permits, and reality in mind from day one.",
-    intro: "The most upside — and the most ways to go sideways. Sequencing matters.",
-    highlights: ["Feasibility and zoning review", "Detached and attached units", "Permit coordination", "Full construction oversight"],
-    scope: ["Feasibility and design", "Permits", "Construction", "Final and closeout"],
-  },
 ];
 
 export type Location = {
