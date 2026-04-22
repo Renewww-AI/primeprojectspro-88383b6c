@@ -76,8 +76,8 @@ export const services: Service[] = [
   {
     slug: "roofing",
     title: "Roofing",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200",
-    alt: "Roofing project",
+    img: "https://images.unsplash.com/photo-1632759145355-8b8f3ab6c1f3?w=1600&q=80",
+    alt: "Roofer installing shingles on a residential rooftop",
     body: "Protect the home with roofing guidance centered on condition, options, scope clarity, and quality workmanship.",
     intro:
       "Roofing decisions need clear information. We assess existing condition, review material and system options, and coordinate replacement or repair scopes that hold up over time.",
@@ -118,8 +118,8 @@ export const services: Service[] = [
   {
     slug: "pool-backyard-projects",
     title: "Pool & Backyard Projects",
-    img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&q=80",
-    alt: "Pool and backyard",
+    img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80",
+    alt: "Residential backyard with swimming pool and patio",
     body: "Bring together hardscape, pool updates, landscape features, and layout improvements with a coordinated backyard vision.",
     intro:
       "Backyards work best when the pool, hardscape, landscape, and outdoor structures are planned together. We coordinate the full vision so the result feels intentional.",
@@ -228,16 +228,6 @@ export const services: Service[] = [
     intro: "Most HVAC problems are sizing and duct problems wearing equipment costumes.",
     highlights: ["Load calculations", "Furnace and AC replacement", "Duct repair and sealing", "Mini-split and zoning"],
     scope: ["Assessment and sizing", "Equipment order", "Install", "Commissioning and balancing"],
-  },
-  {
-    slug: "additions-adus",
-    title: "Additions & ADUs",
-    img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=80",
-    alt: "Detached ADU exterior",
-    body: "Additions and ADUs planned with feasibility, permits, and reality in mind from day one.",
-    intro: "The most upside — and the most ways to go sideways. Sequencing matters.",
-    highlights: ["Feasibility and zoning review", "Detached and attached units", "Permit coordination", "Full construction oversight"],
-    scope: ["Feasibility and design", "Permits", "Construction", "Final and closeout"],
   },
 ];
 
@@ -420,7 +410,7 @@ export const projects: Project[] = [
     badge: "Roofing",
     location: "Oceanside, CA",
     overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400",
+    img: "https://images.unsplash.com/photo-1632759145355-8b8f3ab6c1f3?w=1400&q=80",
     intro: "Complete roof replacement coordinated with fascia, gutter, and trim refresh.",
   },
   {
