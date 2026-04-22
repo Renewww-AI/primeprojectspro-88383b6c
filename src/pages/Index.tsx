@@ -1,3 +1,4 @@
+import Seo, { localBusinessJsonLd } from "@/components/Seo";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import IntakeForm from "@/components/IntakeForm";
@@ -15,6 +16,12 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Seo
+        title="San Diego Home Remodeling & Concierge Contractor | Prime Projects"
+        description="Premium home remodeling guidance for San Diego County homeowners — kitchens, baths, ADUs, roofing, landscaping, and outdoor living, planned with concierge oversight."
+        path="/"
+        jsonLd={localBusinessJsonLd}
+      />
       <Header />
       <HeroSection />
       <IntakeForm />
