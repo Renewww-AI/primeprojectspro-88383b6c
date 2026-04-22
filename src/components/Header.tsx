@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Locations", href: "#locations" },
-  { label: "Projects", href: "#projects" },
-  { label: "Planning", href: "#planning" },
-  { label: "About", href: "#about" },
-  { label: "FAQs", href: "#faq" },
-  { label: "Contact", href: "#intake" },
+  { label: "Services", href: "/#services", type: "anchor" as const },
+  { label: "Locations", href: "/#locations", type: "anchor" as const },
+  { label: "Projects", href: "/#projects", type: "anchor" as const },
+  { label: "Planning", href: "/#planning", type: "anchor" as const },
+  { label: "Blog", href: "/blog", type: "route" as const },
+  { label: "About", href: "/#about", type: "anchor" as const },
+  { label: "FAQs", href: "/#faq", type: "anchor" as const },
+  { label: "Contact", href: "/#intake", type: "anchor" as const },
 ];
 
 const Header = () => {
