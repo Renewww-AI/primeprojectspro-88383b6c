@@ -76,8 +76,8 @@ export const services: Service[] = [
   {
     slug: "roofing",
     title: "Roofing",
-    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1600&q=80",
-    alt: "Roofer installing shingles on a residential rooftop",
+    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1600&q=80",
+    alt: "Roofer actively working on a residential rooftop",
     body: "Protect the home with roofing guidance centered on condition, options, scope clarity, and quality workmanship.",
     intro:
       "Roofing decisions need clear information. We assess existing condition, review material and system options, and coordinate replacement or repair scopes that hold up over time.",
@@ -345,7 +345,7 @@ export const articles: Article[] = [
     slug: "roof-replacement-vs-repair",
     cat: "Roofing",
     title: "What to consider before replacing a roof",
-    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1200",
+    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1200",
     intro: "Roof decisions hinge on age, system condition, and how long you plan to stay in the home.",
     sections: [
       { heading: "Condition assessment", body: "An honest assessment compares localized repairs against full replacement." },
@@ -410,7 +410,7 @@ export const projects: Project[] = [
     badge: "Roofing",
     location: "Oceanside, CA",
     overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
-    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1400&q=80",
+    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1400&q=80",
     intro: "Complete roof replacement coordinated with fascia, gutter, and trim refresh.",
   },
   {
