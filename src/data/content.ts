@@ -76,7 +76,7 @@ export const services: Service[] = [
   {
     slug: "roofing",
     title: "Roofing",
-    img: "https://images.unsplash.com/photo-1632759145355-8b8f3ab6c1f3?w=1600&q=80",
+    img: "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1600&q=80",
     alt: "Roofer installing shingles on a residential rooftop",
     body: "Protect the home with roofing guidance centered on condition, options, scope clarity, and quality workmanship.",
     intro:
