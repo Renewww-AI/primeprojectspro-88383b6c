@@ -1,71 +1,89 @@
+import { Star, Check, MapPin } from "lucide-react";
+import heroImage from "@/assets/hero-outdoor.jpg";
+
 const HeroSection = () => {
   return (
-    <section className="bg-stone-bg pt-28 pb-20 px-4 md:px-6">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        <div className="flex-1 max-w-xl">
-          <p className="text-xs uppercase tracking-widest text-brass mb-4">
-            San Diego County's Homeowner-First Remodeling Partner
-          </p>
-          <h1 className="font-serif text-4xl md:text-[56px] md:leading-[1.1] text-charcoal mb-6">
+    <section className="bg-background pt-32 pb-24 md:pt-40 md:pb-32 px-6">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left column */}
+        <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-8 shadow-sm">
+            <MapPin className="w-3.5 h-3.5 text-olive" />
+            <span className="text-xs font-medium text-charcoal tracking-wide">
+              San Diego County — Serving Local Homeowners
+            </span>
+          </div>
+
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-near-black mb-8 tracking-tight">
             Premium home improvement, guided from first plan to final result.
           </h1>
-          <p className="text-base leading-relaxed text-muted-foreground mb-8 max-w-lg">
+
+          <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
             Prime Projects helps homeowners move forward with clarity on ADUs, kitchens, baths,
-            roofing, outdoor living, pools, and whole-home upgrades — through organized planning,
-            transparent communication, and quality-focused project guidance.
+            roofing, outdoor living, pools, and whole-home upgrades.
           </p>
-          <div className="flex flex-wrap gap-4 mb-8">
+
+          <div className="flex flex-wrap gap-3 mb-10">
             <a
               href="#intake"
-              className="bg-olive text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-olive-dark transition-all"
+              className="bg-olive text-primary-foreground rounded-full px-7 py-3.5 text-sm font-medium hover:bg-olive-dark transition-all shadow-sm"
             >
               Schedule a Project Consultation
             </a>
             <a
               href="#services"
-              className="border border-olive text-olive rounded-full px-8 py-3 text-sm font-medium hover:bg-olive hover:text-primary-foreground transition-all"
+              className="border border-olive/30 text-olive rounded-full px-7 py-3.5 text-sm font-medium hover:bg-olive hover:text-primary-foreground hover:border-olive transition-all"
             >
               Explore Services
             </a>
           </div>
-          <div className="flex flex-wrap gap-6 mb-6">
+
+          <div className="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-3">
             {[
               "Homeowner-first project guidance",
               "Clear scopes and realistic options",
               "Quality-focused execution support",
             ].map((item) => (
               <span key={item} className="flex items-center gap-2 text-sm text-charcoal">
-                <svg className="w-4 h-4 text-olive flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
+                <span className="w-5 h-5 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 text-olive" strokeWidth={3} />
+                </span>
                 {item}
               </span>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Serving homeowners seeking high-quality residential improvement projects across San Diego
-            County, with focused support for remodels, roofing, backyard living, pool upgrades, and
-            ADU planning.
-          </p>
         </div>
 
-        <div className="flex-1 relative h-[400px] md:h-[500px] w-full max-w-lg">
-          <div className="absolute w-[70%] h-[65%] bg-taupe rounded-[40%_60%_50%_40%] top-[15%] left-[10%] opacity-40" />
-          <img
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600"
-            alt="Modern kitchen remodel"
-            className="absolute top-0 right-0 w-[65%] h-[60%] object-cover rounded-2xl shadow-lg z-10"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400"
-            alt="Luxury backyard pool"
-            className="absolute bottom-0 left-0 w-[50%] h-[45%] object-cover rounded-2xl shadow-lg z-20"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=300"
-            alt="Modern ADU exterior"
-            className="absolute bottom-[20%] right-[5%] w-[35%] h-[35%] object-cover rounded-2xl shadow-lg z-30"
-          />
+        {/* Right column - image card */}
+        <div className="lg:col-span-5 relative">
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] bg-muted">
+            <img
+              src={heroImage}
+              alt="Premium outdoor living space with fire pit, pool, and covered patio at dusk"
+              className="w-full h-full object-cover"
+            />
+
+            {/* 5-star review badge */}
+            <div className="absolute top-6 left-6 bg-card/95 backdrop-blur-sm rounded-full px-4 py-2.5 shadow-lg flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-3.5 h-3.5 fill-[hsl(var(--star))] text-[hsl(var(--star))]"
+                  />
+                ))}
+              </div>
+              <span className="text-xs font-semibold text-charcoal">5.0 Rated</span>
+            </div>
+
+            {/* Floating bottom badge */}
+            <div className="absolute bottom-6 left-6 right-6 bg-card/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg">
+              <p className="text-xs uppercase tracking-widest text-brass mb-1">Featured Project</p>
+              <p className="text-sm font-medium text-charcoal">
+                Outdoor living & pool upgrade — North County
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
