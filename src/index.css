@@ -4,34 +4,35 @@
 
 @layer base {
   :root {
-    --background: 40 33% 97%;
-    --foreground: 60 4% 16%;
+    --background: 39 25% 94%;
+    --foreground: 60 8% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 60 4% 16%;
+    --card-foreground: 60 8% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 60 4% 16%;
-    --primary: 93 11% 29%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 40 33% 97%;
-    --secondary-foreground: 60 4% 16%;
-    --muted: 40 20% 94%;
-    --muted-foreground: 30 6% 45%;
-    --accent: 40 26% 49%;
-    --accent-foreground: 0 0% 100%;
+    --popover-foreground: 60 8% 10%;
+    --primary: 60 18% 14%;
+    --primary-foreground: 39 25% 96%;
+    --secondary: 39 22% 90%;
+    --secondary-foreground: 60 8% 10%;
+    --muted: 39 18% 90%;
+    --muted-foreground: 30 5% 40%;
+    --accent: 60 18% 14%;
+    --accent-foreground: 39 25% 96%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 18% 88%;
-    --input: 30 18% 88%;
-    --ring: 93 11% 29%;
-    --radius: 1rem;
-    --olive: 93 11% 29%;
-    --olive-dark: 93 14% 23%;
-    --charcoal: 60 4% 16%;
-    --brass: 40 26% 49%;
-    --taupe: 33 30% 85%;
-    --near-black: 60 6% 10%;
-    --stone-bg: 40 33% 97%;
-    --stone-alt: 40 20% 94%;
+    --border: 36 15% 85%;
+    --input: 36 15% 85%;
+    --ring: 60 18% 14%;
+    --radius: 1.25rem;
+    --olive: 60 18% 14%;
+    --olive-dark: 60 22% 9%;
+    --charcoal: 60 8% 10%;
+    --brass: 36 28% 42%;
+    --taupe: 33 22% 80%;
+    --near-black: 60 10% 6%;
+    --stone-bg: 39 25% 94%;
+    --stone-alt: 39 22% 90%;
+    --star: 42 78% 52%;
   }
 }
 
