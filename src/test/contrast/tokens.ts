@@ -22,7 +22,7 @@ export const TOKENS = {
   olive: { h: 60, s: 18, l: 14 },
   "olive-dark": { h: 60, s: 22, l: 9 },
   charcoal: { h: 60, s: 8, l: 10 },
-  brass: { h: 36, s: 28, l: 42 },
+  brass: { h: 36, s: 32, l: 38 },
   taupe: { h: 33, s: 22, l: 80 },
   "near-black": { h: 60, s: 10, l: 6 },
   "stone-bg": { h: 39, s: 25, l: 94 },
