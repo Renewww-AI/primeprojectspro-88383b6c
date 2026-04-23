@@ -118,8 +118,8 @@ export const services: Service[] = [
   {
     slug: "pool-backyard-projects",
     title: "Pool & Backyard Projects",
-    img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80",
-    alt: "Residential backyard with swimming pool and patio",
+    img: "/src/assets/backyard-pool.png",
+    alt: "Sunlit backyard swimming pool surrounded by stone patio and Mediterranean landscaping",
     body: "Bring together hardscape, pool updates, landscape features, and layout improvements with a coordinated backyard vision.",
     intro:
       "Backyards work best when the pool, hardscape, landscape, and outdoor structures are planned together. We coordinate the full vision so the result feels intentional.",
