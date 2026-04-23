@@ -322,11 +322,29 @@ export const articles: Article[] = [
     cat: "ADU Planning",
     title: "ADU planning in San Diego County",
     img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200",
-    intro: "Planning an ADU in San Diego County involves zoning, site feasibility, and realistic budgeting before design begins.",
+    intro:
+      "Planning an ADU in San Diego County involves zoning, site feasibility, and realistic budgeting before design begins. The homeowners who avoid mid-project surprises are the ones who invest a few weeks up front to pressure-test the basics.",
     sections: [
-      { heading: "Feasibility first", body: "Confirm lot size, setbacks, and utility access before committing to a layout direction." },
-      { heading: "Realistic budgeting", body: "ADU budgets vary widely by size, finishes, and site conditions. Plan ranges, not single numbers." },
-      { heading: "Timeline expectations", body: "Permit, design, and build cycles typically span several months end-to-end." },
+      {
+        heading: "Feasibility first",
+        body: "Before sketching a layout, confirm lot size, setbacks, easements, and utility access. San Diego County jurisdictions each interpret state ADU law slightly differently, and a one-hour feasibility review can reveal hard constraints — sewer capacity, slope, fire access, or overhead lines — that would otherwise surface during permit review. The goal at this stage is to validate that an ADU is actually buildable on your specific lot, not just allowed in your zone.",
+      },
+      {
+        heading: "Realistic budgeting",
+        body: "ADU budgets vary widely by size, finishes, and site conditions. Detached new construction in San Diego County generally runs higher per square foot than the main-house renovation most homeowners use as a mental benchmark, because every system — foundation, framing, roof, HVAC, plumbing, electrical — is built from scratch on a small footprint. Plan ranges, not single numbers, and reserve a contingency for site work, utility upgrades, and impact fees that don't appear on glossy ADU brochures.",
+      },
+      {
+        heading: "Timeline expectations",
+        body: "From first conversation to certificate of occupancy, most ADU projects span eight to fourteen months. Design and engineering typically take two to three months, jurisdictional review another two to four, and construction four to six. Building seasonally — starting design in fall so construction lands in spring — often produces a smoother schedule than reacting to whichever month you happened to start.",
+      },
+      {
+        heading: "Detached, attached, or conversion",
+        body: "Detached ADUs offer the most privacy and resale flexibility but cost the most. Attached additions can share utilities and a wall with the main house, trimming cost but tightening design constraints. Garage and basement conversions are usually the fastest and least expensive path, though existing slab, ceiling height, and ventilation often dictate what's actually possible. The right choice depends on how the unit will be used over the next ten years, not just today.",
+      },
+      {
+        heading: "How the unit will be used",
+        body: "A long-term rental, a multigenerational suite, and a short-term guest unit each push the design in different directions — laundry placement, sound separation, kitchen scope, and entry sequence all change. Decide the primary use before locking the floor plan, and the finished ADU will feel purpose-built rather than generic.",
+      },
     ],
   },
   {
@@ -334,11 +352,29 @@ export const articles: Article[] = [
     cat: "Kitchen Remodel",
     title: "Kitchen remodel budgeting and scope priorities",
     img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200",
-    intro: "Kitchen remodels reward early decisions about scope, layout, and finish tier.",
+    intro:
+      "Kitchen remodels reward early decisions about scope, layout, and finish tier. The biggest budget swings almost always trace back to choices made in the first two weeks — not the last two.",
     sections: [
-      { heading: "Define scope early", body: "Decide whether the project is cosmetic, functional, or a full layout change before pricing." },
-      { heading: "Prioritize finishes", body: "Cabinetry and counters drive both budget and visual impact more than most other categories." },
-      { heading: "Plan for downtime", body: "Most kitchens are fully out of service for several weeks during execution." },
+      {
+        heading: "Define scope early",
+        body: "The single most useful question to answer before pricing anything is whether the project is cosmetic, functional, or a full layout change. Cosmetic refreshes — paint, hardware, lighting, maybe counters — stay in a tight budget band. Functional updates that keep the existing footprint but replace cabinets, counters, and appliances sit in the middle. Layout changes that move walls, plumbing, or gas lines are a different category entirely, and pretending otherwise is how budgets quietly double.",
+      },
+      {
+        heading: "Prioritize finishes",
+        body: "Cabinetry and counters drive both budget and visual impact more than any other category. Spending well on cabinet construction and door style, then choosing a calmer counter, almost always reads better than the reverse. Tile, hardware, and lighting are easier to upgrade later — cabinets are not. Treat the cabinet decision as the anchor and let the rest of the palette respond to it.",
+      },
+      {
+        heading: "Plan for downtime",
+        body: "Most kitchens are fully out of service for four to eight weeks during execution, longer if there are structural changes or long-lead appliances. Set up a temporary kitchen with a microwave, toaster oven, fridge, and a clear surface — and decide in advance which meals you'll cook, which you'll outsource, and where the dishes will get washed. Households that plan the downtime as carefully as the design come out the other side much happier.",
+      },
+      {
+        heading: "Long-lead items",
+        body: "Custom cabinetry, specialty appliances, and natural stone slabs commonly carry lead times of eight to sixteen weeks. Selecting and ordering these before demolition begins is the difference between a project that flows and one that stalls with an open ceiling for a month. Build the schedule backwards from the longest lead item, not forward from the demolition date.",
+      },
+      {
+        heading: "Where to invest, where to save",
+        body: "Invest in the items you touch and look at every day — cabinet hardware, faucet, range, primary lighting. Save on items that are easy to swap later or that no one notices, like trim profiles, secondary fixtures, and pantry interiors. A disciplined invest/save list keeps the budget honest without making the kitchen feel compromised.",
+      },
     ],
   },
   {
@@ -346,11 +382,29 @@ export const articles: Article[] = [
     cat: "Roofing",
     title: "What to consider before replacing a roof",
     img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1200",
-    intro: "Roof decisions hinge on age, system condition, and how long you plan to stay in the home.",
+    intro:
+      "Roof decisions hinge on age, system condition, and how long you plan to stay in the home. A clear-eyed assessment up front is worth more than any single bid.",
     sections: [
-      { heading: "Condition assessment", body: "An honest assessment compares localized repairs against full replacement." },
-      { heading: "System options", body: "Tile, shingle, and flat systems each carry different lifespans and costs." },
-      { heading: "Surrounding scope", body: "Fascia, gutters, and trim are often best addressed during a replacement." },
+      {
+        heading: "Condition assessment",
+        body: "An honest assessment compares localized repairs against full replacement, not just patch-by-patch pricing. The right roofer will look at the underlayment, flashing, valleys, and ventilation — not only the surface material — and tell you which failures are isolated and which suggest the system is at the end of its useful life. If three different repair zones appear in two years, the roof is usually telling you something.",
+      },
+      {
+        heading: "System options",
+        body: "Tile, asphalt shingle, and flat membrane systems each carry different lifespans, costs, and maintenance profiles. Concrete and clay tile can last fifty years or more but weigh significantly more and demand specific underlayment and fastening detail. Architectural shingles are the most cost-effective and typically last twenty-five to thirty years. Single-ply membranes on flat sections require careful seam and edge detailing — the material is rarely the failure point, the install almost always is.",
+      },
+      {
+        heading: "Surrounding scope",
+        body: "Fascia, gutters, skylights, and trim are nearly always best addressed during a replacement. Tearing into them later means lifting roofing material and breaking warranties. If the budget allows only one pass, pull the surrounding scope into the roofing project rather than scheduling a separate visit a year later.",
+      },
+      {
+        heading: "Timing and weather",
+        body: "In Southern California, dry-season replacement (late spring through early fall) is the norm, but the best crews book months ahead. Scheduling early lets you choose the contractor rather than settling for whoever is available the week your leak appears. Emergency replacements almost always cost more and offer fewer material choices.",
+      },
+      {
+        heading: "How long you plan to stay",
+        body: "If you expect to sell within two to three years, a well-executed repair plus disclosure may serve better than a full replacement. If you're staying ten-plus years, replacement with a longer-life system and proper ventilation will out-perform a series of repairs on both cost and peace of mind. Match the roof decision to the ownership timeline, not to a generic rule of thumb.",
+      },
     ],
   },
   {
@@ -358,11 +412,29 @@ export const articles: Article[] = [
     cat: "Outdoor Living",
     title: "Outdoor living upgrades that improve daily use",
     img: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200",
-    intro: "The best outdoor living upgrades are the ones a household actually uses every week.",
+    intro:
+      "The best outdoor living upgrades are the ones a household actually uses every week. Start with how you want to spend evenings outside, then design backwards from there.",
     sections: [
-      { heading: "Start with use cases", body: "Cooking, lounging, dining, and shade each call for different layout decisions." },
-      { heading: "Hardscape vs. structure", body: "Patios, pergolas, and outdoor kitchens carry very different cost levels." },
-      { heading: "Lighting matters", body: "Thoughtful lighting often makes the difference between a space used or ignored." },
+      {
+        heading: "Start with use cases",
+        body: "Cooking, lounging, dining, shade, and play each call for different layout decisions. A built-in BBQ wants prep space, ventilation, and a clear traffic path. A lounge area wants sun control, soft surfaces, and a sense of enclosure. Listing the two or three activities you actually want to do — not the ten a brochure suggests — keeps the project focused and the budget proportional.",
+      },
+      {
+        heading: "Hardscape vs. structure",
+        body: "Patios, pergolas, and outdoor kitchens carry very different cost levels and permitting requirements. A new patio is usually the lowest-cost, highest-impact move. Adding a covered structure roughly doubles the investment but extends usable hours per year considerably. Outdoor kitchens with gas, water, and electrical sit in their own category and benefit from the same planning rigor as an indoor remodel.",
+      },
+      {
+        heading: "Lighting matters",
+        body: "Thoughtful lighting often makes the difference between a space used or ignored after sunset. Layered lighting — path, ambient, and task — extends usable hours and dramatically changes how the space feels. Plan conduit and low-voltage runs during hardscape work, even if some fixtures are added later. Trenching a finished patio is the kind of regret you only feel once.",
+      },
+      {
+        heading: "Materials that age well",
+        body: "Concrete, natural stone, porcelain pavers, and IPE all weather differently in coastal Southern California. Salt air, UV, and irrigation overspray are unforgiving — choose materials that look intentional as they age rather than ones that depend on a perfect first year. Sample boards left outside for thirty days are the cheapest insurance you can buy.",
+      },
+      {
+        heading: "Phasing the project",
+        body: "If the full vision is out of reach today, phase it in a way that doesn't require redoing earlier work. Set the hardscape footprint, run utilities and lighting conduit, and finish the structures and outdoor kitchen later. A clear master plan turns a multi-year build into a coherent result rather than a collage.",
+      },
     ],
   },
   {
@@ -370,11 +442,29 @@ export const articles: Article[] = [
     cat: "Pool & Backyard",
     title: "Pool and backyard planning for better flow and function",
     img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80",
-    intro: "Pool and backyard projects work best when planned as a single coordinated vision.",
+    intro:
+      "Pool and backyard projects work best when planned as a single coordinated vision. Treating the pool, hardscape, and landscape as one project — instead of three sequential ones — produces a backyard that feels designed rather than assembled.",
     sections: [
-      { heading: "Coordinate trades", body: "Pool, hardscape, and landscape teams should plan together, not sequentially." },
-      { heading: "Flow and zones", body: "Define lounging, dining, and play zones before finalizing pool placement." },
-      { heading: "Long-term maintenance", body: "Material and system choices have a major impact on annual upkeep." },
+      {
+        heading: "Coordinate trades",
+        body: "Pool, hardscape, and landscape teams should plan together, not sequentially. When the pool builder, mason, and landscape designer share one site plan, equipment access, drainage, and finish elevations all line up. When they don't, you end up with a beautiful pool surrounded by patched grass and a coping line that fights the deck.",
+      },
+      {
+        heading: "Flow and zones",
+        body: "Define lounging, dining, shade, and play zones before finalizing pool placement. The pool is the gravitational center of the yard, but it shouldn't crowd out the spaces around it. A useful exercise: tape out furniture footprints on the existing yard for a weekend and live with the layout before any concrete is poured.",
+      },
+      {
+        heading: "Long-term maintenance",
+        body: "Material and system choices have a major impact on annual upkeep. Pebble vs. plaster interior, salt vs. chlorine, automated vs. manual covers, and planting palette all change how many hours per month the backyard demands. Choose with both the install cost and the next ten years of weekends in mind.",
+      },
+      {
+        heading: "Drainage and grading",
+        body: "Backyards live or die on drainage. A pool, deck, planters, and lawn each shed water differently, and grading mistakes show up as standing puddles, foundation moisture, or eroded planters within the first rainy season. Get the civil and drainage plan right before any decorative decisions are finalized.",
+      },
+      {
+        heading: "Lighting and after-dark use",
+        body: "A backyard you only use until sunset is half a backyard. Underwater pool lighting, perimeter wash lighting, path lights, and a few statement fixtures over dining and lounging zones turn the space into something used year-round. Plan the electrical and conduit during hardscape, not after the deck has cured.",
+      },
     ],
   },
 ];
