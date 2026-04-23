@@ -97,14 +97,14 @@ const Blog = () => {
             width={1600}
             height={900}
           />
-          <div className="absolute inset-0 bg-near-black/65" />
+          <div className="absolute inset-0 bg-gradient-to-b from-near-black/75 via-near-black/55 to-near-black/80" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-brass mb-4">Blog</p>
+          <p className="text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-4">Blog</p>
           <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground mb-5 leading-tight">
             The Homeowner's Guide
           </h1>
-          <p className="text-lg text-primary-foreground/85 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-primary-foreground/95 max-w-2xl mx-auto mb-8">
             Built for homeowners who value clarity, quality, and accountability.
           </p>
 
@@ -125,7 +125,7 @@ const Blog = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full px-7 w-full sm:w-auto border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-near-black"
+              className="rounded-full px-7 w-full sm:w-auto border-primary-foreground/70 bg-near-black/30 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground hover:text-near-black"
             >
               <Link to="/blog/submit">Share Your Story</Link>
             </Button>

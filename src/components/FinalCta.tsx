@@ -5,7 +5,7 @@ const FinalCta = () => {
         <h2 className="font-serif text-3xl md:text-[42px] md:leading-[1.2] text-primary-foreground mb-4">
           Schedule your home project consultation
         </h2>
-        <p className="text-lg text-primary-foreground/70 mb-8">
+        <p className="text-lg text-primary-foreground/85 mb-8">
           Whether you're exploring an ADU, planning a remodel, replacing a roof, or rethinking your
           backyard, Prime Projects helps you move forward with more clarity and less guesswork.
         </p>
