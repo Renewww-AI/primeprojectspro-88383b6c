@@ -33,22 +33,48 @@ const ProjectPage = () => {
           Licensed, bonded &amp; insured · {project.location} project · Free consultations
         </p>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div>
             <h2 className="font-serif text-2xl text-charcoal mb-2">The challenge</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">{project.intro}</p>
+            <p className="text-muted-foreground leading-relaxed text-lg">{project.challenge}</p>
           </div>
           <div>
             <h2 className="font-serif text-2xl text-charcoal mb-2">Our approach</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">{project.overlay}</p>
+            <p className="text-muted-foreground leading-relaxed text-lg">{project.approach}</p>
           </div>
           <div>
             <h2 className="font-serif text-2xl text-charcoal mb-2">The outcome</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              A coordinated {project.badge.toLowerCase()} delivered in {project.location} with clear
-              scope, realistic timelines, and concierge-level oversight from planning through final
-              walkthrough.
-            </p>
+            <p className="text-muted-foreground leading-relaxed text-lg">{project.outcome}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 pt-4">
+            <div className="bg-stone-bg rounded-2xl p-6 border border-border">
+              <h3 className="text-xs uppercase tracking-widest text-brass mb-3">Scope highlights</h3>
+              <ul className="space-y-2">
+                {project.highlights.map((h) => (
+                  <li key={h} className="text-charcoal text-sm flex gap-2">
+                    <span className="text-olive">·</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-stone-bg rounded-2xl p-6 border border-border">
+              <h3 className="text-xs uppercase tracking-widest text-brass mb-3">Materials &amp; finishes</h3>
+              <ul className="space-y-2">
+                {project.materials.map((m) => (
+                  <li key={m} className="text-charcoal text-sm flex gap-2">
+                    <span className="text-olive">·</span>
+                    <span>{m}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-l-2 border-olive pl-4">
+            <p className="text-xs uppercase tracking-widest text-brass mb-1">Project timeline</p>
+            <p className="text-charcoal">{project.timeline}</p>
           </div>
         </div>
 
