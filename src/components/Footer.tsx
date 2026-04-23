@@ -87,7 +87,7 @@ const Footer = () => {
         <span className="text-xs text-primary-foreground/30">© 2025 Prime Projects. All rights reserved.</span>
         <span className="text-xs text-primary-foreground/30">Serving San Diego County and surrounding communities</span>
         <span className="text-xs text-primary-foreground/30">
-          CA Contractor License #[Placeholder] · <Link to="/privacy" className="hover:text-primary-foreground/60">Privacy Policy</Link> · <Link to="/terms" className="hover:text-primary-foreground/60">Terms</Link>
+          <Link to="/privacy-policy" className="hover:text-primary-foreground/60">Privacy Policy</Link> · <Link to="/terms" className="hover:text-primary-foreground/60">Terms</Link>
         </span>
       </div>
     </footer>
