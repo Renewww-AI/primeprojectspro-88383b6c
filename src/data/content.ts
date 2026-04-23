@@ -369,7 +369,7 @@ export const articles: Article[] = [
     slug: "pool-backyard-planning",
     cat: "Pool & Backyard",
     title: "Pool and backyard planning for better flow and function",
-    img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200",
+    img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80",
     intro: "Pool and backyard projects work best when planned as a single coordinated vision.",
     sections: [
       { heading: "Coordinate trades", body: "Pool, hardscape, and landscape teams should plan together, not sequentially." },
