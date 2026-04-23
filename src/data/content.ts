@@ -286,7 +286,7 @@ export const locations: Location[] = [
     name: "Vista",
     desc: "Residential improvement services",
     intro: "Vista homes are well suited to whole-home upgrades, additions, and outdoor living transformations.",
-    img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1600&q=80",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
     whyLocal: "Vista's larger lots and varied terrain open up real possibilities for additions, ADUs, and outdoor living investments.",
   },
   {
