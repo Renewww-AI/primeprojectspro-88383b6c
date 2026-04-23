@@ -53,13 +53,23 @@ const Blog = () => {
       />
       <Header />
 
-      <section className="pt-32 pb-12 px-4 md:px-6 bg-secondary">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 md:px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80"
+            alt="Sunlit modern home interior with warm wood tones and considered detailing"
+            className="w-full h-full object-cover"
+            width={1600}
+            height={900}
+          />
+          <div className="absolute inset-0 bg-near-black/65" />
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center">
           <p className="text-xs uppercase tracking-widest text-brass mb-4">Blog</p>
-          <h1 className="font-serif text-4xl md:text-6xl text-charcoal mb-5">
+          <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground mb-5 leading-tight">
             The Homeowner's Guide
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-primary-foreground/85 max-w-2xl mx-auto mb-8">
             Built for homeowners who value clarity, quality, and accountability.
           </p>
 
