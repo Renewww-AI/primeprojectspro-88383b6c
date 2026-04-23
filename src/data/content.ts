@@ -506,6 +506,12 @@ export type Project = {
   overlay: string;
   img: string;
   intro: string;
+  challenge: string;
+  approach: string;
+  outcome: string;
+  highlights: string[];
+  materials: string[];
+  timeline: string;
 };
 
 export const projects: Project[] = [
@@ -516,6 +522,25 @@ export const projects: Project[] = [
     overlay: "Coastal kitchen remodel featuring custom cabinetry, quartz countertops, and improved natural light.",
     img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400",
     intro: "A full coastal kitchen remodel focused on light, flow, and refined material selection.",
+    challenge:
+      "The original kitchen felt closed off from the dining area, suffered from low natural light, and used aging finishes that no longer matched how the household actually cooked and entertained. Storage was inefficient and the island created a bottleneck during weekend gatherings.",
+    approach:
+      "We reworked the layout to widen the opening to the dining room, repositioned the island to improve traffic flow, and coordinated cabinet, counter, and lighting selections as a single palette. Long-lead items were ordered before demolition so the schedule never stalled waiting on materials.",
+    outcome:
+      "A brighter, calmer kitchen that handles weekday cooking and weekend hosting equally well. The household reports noticeably better flow, more usable storage, and a finish quality that has held up cleanly through the first year of daily use.",
+    highlights: [
+      "Reconfigured island for better circulation",
+      "Custom rift-cut white oak cabinetry",
+      "Layered ambient, task, and accent lighting",
+      "Upgraded ventilation and electrical service",
+    ],
+    materials: [
+      "Quartz countertops with a soft matte finish",
+      "Hand-glazed ceramic backsplash tile",
+      "PVD-finished hardware rated for coastal air",
+      "Engineered white oak flooring throughout",
+    ],
+    timeline: "10 weeks from demolition to final walkthrough",
   },
   {
     slug: "carlsbad-outdoor-living",
@@ -524,6 +549,25 @@ export const projects: Project[] = [
     overlay: "Backyard living upgrade with covered patio, built-in BBQ, and hardscape redesign.",
     img: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1400",
     intro: "Backyard transformation pairing a covered patio, outdoor kitchen, and updated hardscape.",
+    challenge:
+      "An underused backyard with a cracked concrete slab, no shade structure, and a disconnected grill area meant the family rarely spent evenings outside. Drainage issues during winter rains were also creating standing water near the foundation.",
+    approach:
+      "We replaced the slab with a porcelain paver patio, added a cedar pergola sized to the dining footprint, and built a clean-lined outdoor kitchen with prep counters and ventilation. Drainage and low-voltage lighting conduit were addressed during hardscape so nothing had to be reopened later.",
+    outcome:
+      "A backyard that now functions as a true second living room — used multiple nights per week through three seasons. Drainage performs cleanly through winter storms and the lighting plan extends usable hours well past sunset.",
+    highlights: [
+      "Cedar pergola sized to dining and lounge zones",
+      "Built-in BBQ with prep counter and storage",
+      "Layered low-voltage lighting plan",
+      "Corrected drainage and grading throughout",
+    ],
+    materials: [
+      "Porcelain pavers with a textured matte finish",
+      "Western red cedar with a clear penetrating sealer",
+      "Stainless built-in grill and side burner",
+      "Marine-grade fixtures and conduit",
+    ],
+    timeline: "8 weeks from site prep to final lighting commissioning",
   },
   {
     slug: "oceanside-roof-replacement",
@@ -532,6 +576,25 @@ export const projects: Project[] = [
     overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
     img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1400&q=80",
     intro: "Complete roof replacement coordinated with fascia, gutter, and trim refresh.",
+    challenge:
+      "A twenty-five-year-old shingle roof was showing failures across multiple zones — granule loss, lifted shingles, and worn flashing — and prior patch repairs were no longer holding. Fascia and gutters were also at the end of their useful life.",
+    approach:
+      "We replaced the roof system in full, upgraded underlayment and flashing detail, and pulled fascia, gutters, and exterior trim painting into the same project window so nothing had to be reopened later. The schedule was set during dry season to avoid weather risk.",
+    outcome:
+      "A coordinated exterior refresh that resets the home's weather envelope for the next twenty-five-plus years. Ventilation was corrected during install, which has noticeably reduced summer attic temperatures.",
+    highlights: [
+      "Architectural composition shingle system",
+      "Upgraded underlayment and metal flashing",
+      "New seamless gutters and downspouts",
+      "Attic ventilation correction",
+    ],
+    materials: [
+      "Class A architectural shingles",
+      "Self-adhering high-temp underlayment",
+      "Painted aluminum fascia wrap",
+      "Powder-coated seamless gutters",
+    ],
+    timeline: "3 weeks including exterior trim painting",
   },
   {
     slug: "north-county-adu",
@@ -540,5 +603,24 @@ export const projects: Project[] = [
     overlay: "ADU planning and feasibility project for a 600 sq ft detached unit with separate entrance.",
     img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1400",
     intro: "Detached 600 sq ft ADU with independent entry, planned from feasibility through build.",
+    challenge:
+      "The homeowners wanted a long-term rental unit that would also work as a guest suite for visiting family, on a lot with tight setbacks and a sloped rear yard. Early feasibility was critical to avoid designing something that wouldn't permit cleanly.",
+    approach:
+      "We started with a feasibility review covering setbacks, utility access, and grading before any design work. The final layout placed the ADU to preserve main-house privacy, used a stepped foundation to handle the slope, and shared a utility trench with the main house to control cost.",
+    outcome:
+      "A permitted, fully detached 600 sq ft ADU with a private entry, full kitchen, and dedicated outdoor space. The unit performs well as both a long-term rental and a guest suite, which was the original brief.",
+    highlights: [
+      "Pre-design feasibility and zoning review",
+      "Stepped foundation for sloped lot",
+      "Independent entry with private outdoor area",
+      "Shared utility trench to control cost",
+    ],
+    materials: [
+      "Smooth-finish stucco exterior",
+      "Standing seam metal roof",
+      "Mid-tier quartz counters and shaker cabinetry",
+      "Mini-split HVAC sized for the footprint",
+    ],
+    timeline: "11 months from feasibility through certificate of occupancy",
   },
 ];
