@@ -1,3 +1,5 @@
+import backyardPool from "@/assets/backyard-pool.png";
+
 export type Service = {
   slug: string;
   title: string;
@@ -118,7 +120,7 @@ export const services: Service[] = [
   {
     slug: "pool-backyard-projects",
     title: "Pool & Backyard Projects",
-    img: "/src/assets/backyard-pool.png",
+    img: backyardPool,
     alt: "Sunlit backyard swimming pool surrounded by stone patio and Mediterranean landscaping",
     body: "Bring together hardscape, pool updates, landscape features, and layout improvements with a coordinated backyard vision.",
     intro:
