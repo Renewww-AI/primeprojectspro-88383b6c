@@ -139,8 +139,8 @@ export const services: Service[] = [
   {
     slug: "home-audio",
     title: "Home Audio",
-    img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
-    alt: "Modern home audio system in living room",
+    img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1600&q=80",
+    alt: "Modern home theater room with integrated audio",
     body: "Whole-home audio, media rooms, and integrated sound systems planned for clarity, coverage, and clean installation.",
     intro:
       "Home audio works best when speakers, wiring, and controls are planned alongside the room. We coordinate clean installs that look and sound intentional.",
