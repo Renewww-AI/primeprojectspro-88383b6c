@@ -117,8 +117,8 @@ export const serviceDetails: ServiceDetail[] = [
     metaDescription:
       "Whole-home audio, media rooms, and smart home integration planned and installed with clean wiring, intuitive controls, and concierge coordination.",
     heroImg:
-      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1600&q=80",
-    heroAlt: "Modern home theater with integrated audio and smart controls",
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
+    heroAlt: "Modern living room with integrated audio and smart controls",
     intro:
       "The best home audio and smart home systems are the ones you almost forget are there. No tangle of remotes, no ceiling speakers staring at you, no app that needs a tutorial.",
     body: [

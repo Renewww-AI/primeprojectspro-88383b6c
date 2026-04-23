@@ -1,5 +1,3 @@
-import backyardPool from "@/assets/backyard-pool.png";
-
 export type Service = {
   slug: string;
   title: string;
@@ -120,8 +118,8 @@ export const services: Service[] = [
   {
     slug: "pool-backyard-projects",
     title: "Pool & Backyard Projects",
-    img: backyardPool,
-    alt: "Sunlit backyard swimming pool surrounded by stone patio and Mediterranean landscaping",
+    img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80",
+    alt: "Residential backyard with swimming pool and patio",
     body: "Bring together hardscape, pool updates, landscape features, and layout improvements with a coordinated backyard vision.",
     intro:
       "Backyards work best when the pool, hardscape, landscape, and outdoor structures are planned together. We coordinate the full vision so the result feels intentional.",
@@ -141,8 +139,8 @@ export const services: Service[] = [
   {
     slug: "home-audio",
     title: "Home Audio",
-    img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1600&q=80",
-    alt: "Modern home theater room with integrated audio",
+    img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
+    alt: "Modern home audio system in living room",
     body: "Whole-home audio, media rooms, and integrated sound systems planned for clarity, coverage, and clean installation.",
     intro:
       "Home audio works best when speakers, wiring, and controls are planned alongside the room. We coordinate clean installs that look and sound intentional.",
