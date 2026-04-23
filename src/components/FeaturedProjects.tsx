@@ -29,16 +29,18 @@ const FeaturedProjects = () => {
                 width={1200}
                 height={900}
               />
-              <span className="absolute top-4 left-4 bg-card text-charcoal text-xs font-medium px-3 py-1 rounded-full">
+              <span className="absolute top-4 left-4 z-10 bg-card text-charcoal text-xs font-medium px-3 py-1 rounded-full shadow-md">
                 {p.badge}
               </span>
-              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/60 transition-colors flex items-end">
+              {/* Persistent bottom gradient for label legibility */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-near-black/80 via-near-black/30 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity" />
+              <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/65 transition-colors flex items-end">
                 <div className="p-6 opacity-0 group-hover:opacity-100 transition-opacity">
                   <p className="text-primary-foreground text-sm leading-relaxed mb-2">{p.overlay}</p>
-                  <p className="text-primary-foreground/70 text-xs">{p.location}</p>
+                  <p className="text-primary-foreground/85 text-xs">{p.location}</p>
                 </div>
               </div>
-              <span className="absolute bottom-4 left-4 text-primary-foreground text-xs group-hover:opacity-0 transition-opacity drop-shadow-lg">
+              <span className="absolute bottom-4 left-4 text-primary-foreground text-xs font-medium group-hover:opacity-0 transition-opacity">
                 {p.location}
               </span>
             </Link>

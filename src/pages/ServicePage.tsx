@@ -152,7 +152,7 @@ const ServicePage = () => {
             <h3 className="font-serif text-2xl md:text-3xl mb-3">
               Get Your Free {detail.title} Consultation
             </h3>
-            <p className="text-primary-foreground/75 mb-6 max-w-xl mx-auto">
+            <p className="text-primary-foreground/85 mb-6 max-w-xl mx-auto">
               Talk through goals, scope, and realistic budget — no obligation, no sales pressure.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

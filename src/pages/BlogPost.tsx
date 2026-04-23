@@ -106,7 +106,7 @@ const BlogPost = () => {
 
           <div className="mt-16 bg-near-black text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
             <h2 className="font-serif text-2xl md:text-3xl mb-3">Need help with your project?</h2>
-            <p className="text-primary-foreground/75 mb-6 max-w-xl mx-auto">
+            <p className="text-primary-foreground/85 mb-6 max-w-xl mx-auto">
               Get a free consultation — we'll talk through goals, scope, and realistic next steps.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

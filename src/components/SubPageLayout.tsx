@@ -28,7 +28,7 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
               width={1600}
               height={900}
             />
-            <div className="absolute inset-0 bg-near-black/65" />
+            <div className="absolute inset-0 bg-gradient-to-b from-near-black/70 via-near-black/55 to-near-black/75" />
           </div>
           <div className="relative max-w-4xl mx-auto">
             <Link
@@ -38,13 +38,13 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
               ← Back to home
             </Link>
             {eyebrow && (
-              <p className="text-xs uppercase tracking-widest text-brass mb-4">{eyebrow}</p>
+              <p className="text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-4">{eyebrow}</p>
             )}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 leading-tight">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 leading-tight drop-shadow-sm">
               {title}
             </h1>
             {intro && (
-              <p className="text-lg text-primary-foreground/85 leading-relaxed max-w-2xl">
+              <p className="text-lg text-primary-foreground/95 leading-relaxed max-w-2xl">
                 {intro}
               </p>
             )}

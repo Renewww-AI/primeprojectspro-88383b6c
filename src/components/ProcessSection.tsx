@@ -9,11 +9,11 @@ const ProcessSection = () => {
   return (
     <section className="bg-olive py-20 px-4 md:px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs uppercase tracking-widest text-brass mb-4">How it works</p>
+        <p className="text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-4">How it works</p>
         <h2 className="text-3xl md:text-4xl font-medium text-primary-foreground mb-4">
           A more organized path from idea to completed project
         </h2>
-        <p className="text-base text-primary-foreground/70 max-w-2xl mx-auto mb-12">
+        <p className="text-base text-primary-foreground/85 max-w-2xl mx-auto mb-12">
           Homeowners do better when they understand what comes next. Our process is designed to reduce
           uncertainty and create a smoother experience from initial conversation through final delivery.
         </p>
@@ -21,11 +21,11 @@ const ProcessSection = () => {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="bg-primary-foreground/10 rounded-2xl p-6 border border-primary-foreground/20 text-left"
+              className="bg-primary-foreground/10 rounded-2xl p-6 border border-primary-foreground/25 text-left"
             >
-              <span className="text-5xl font-light text-brass">{step.num}</span>
+              <span className="text-5xl font-light text-[hsl(36_45%_65%)]">{step.num}</span>
               <h3 className="text-lg font-medium text-primary-foreground mt-4 mb-2">{step.title}</h3>
-              <p className="text-sm text-primary-foreground/70 leading-relaxed">{step.body}</p>
+              <p className="text-sm text-primary-foreground/85 leading-relaxed">{step.body}</p>
             </div>
           ))}
         </div>
