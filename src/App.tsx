@@ -13,6 +13,9 @@ import PlanningPage from "./pages/PlanningPage.tsx";
 import ProjectPage from "./pages/ProjectPage.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import BlogSubmit from "./pages/BlogSubmit.tsx";
+import AdminLogin from "./pages/AdminLogin.tsx";
+import AdminSubmissions from "./pages/AdminSubmissions.tsx";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +34,10 @@ const App = () => (
           <Route path="/planning/:slug" element={<PlanningPage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/submit" element={<BlogSubmit />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/blog-submissions" element={<AdminSubmissions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

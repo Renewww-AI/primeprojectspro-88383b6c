@@ -1,15 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Search } from "lucide-react";
 import Seo, { breadcrumbJsonLd } from "@/components/Seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FinalCta from "@/components/FinalCta";
-import { BLOG_CATEGORIES, BlogCategory, blogPosts } from "@/data/blog";
+import CommunityCta from "@/components/CommunityCta";
+import { Button } from "@/components/ui/button";
+import { BLOG_CATEGORIES, BlogCategory, blogPosts, BlogPost } from "@/data/blog";
+import { supabase } from "@/integrations/supabase/client";
+import { CommunityBlogPost, CommunityRow, rowToBlogPost } from "@/lib/community";
+
+type AnyPost = BlogPost | CommunityBlogPost;
+const isCommunity = (p: AnyPost): p is CommunityBlogPost =>
+  (p as CommunityBlogPost).isCommunity === true;
 
 const Blog = () => {
+  const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<BlogCategory>("All Posts");
+  const [community, setCommunity] = useState<CommunityBlogPost[]>([]);
+  const onlyCommunity = params.get("filter") === "community";
 
   useEffect(() => {
     document.title = "The Homeowner's Guide | Prime Projects Blog";
@@ -25,8 +36,26 @@ const Blog = () => {
     );
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      const { data } = await supabase
+        .from("blog_submissions")
+        .select("*")
+        .eq("status", "approved")
+        .eq("published", true)
+        .order("published_at", { ascending: false });
+      if (data) setCommunity((data as CommunityRow[]).map(rowToBlogPost));
+    })();
+  }, []);
+
+  const allPosts: AnyPost[] = useMemo(() => {
+    const merged: AnyPost[] = [...community, ...blogPosts];
+    if (onlyCommunity) return merged.filter(isCommunity);
+    return merged;
+  }, [community, onlyCommunity]);
+
   const filtered = useMemo(() => {
-    return blogPosts.filter((p) => {
+    return allPosts.filter((p) => {
       const matchesCat = activeCat === "All Posts" || p.category === activeCat;
       const q = query.trim().toLowerCase();
       const matchesQuery =
@@ -36,12 +65,18 @@ const Blog = () => {
         p.category.toLowerCase().includes(q);
       return matchesCat && matchesQuery;
     });
-  }, [query, activeCat]);
+  }, [query, activeCat, allPosts]);
 
   const breadcrumb = breadcrumbJsonLd([
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
   ]);
+
+  const clearCommunityFilter = () => {
+    const next = new URLSearchParams(params);
+    next.delete("filter");
+    setParams(next, { replace: true });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -84,6 +119,17 @@ const Blog = () => {
               className="w-full bg-card border border-border rounded-full pl-11 pr-5 py-3 text-sm text-charcoal placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-olive/30"
             />
           </div>
+
+          <div className="mt-5 flex justify-center">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full px-7 w-full sm:w-auto border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-near-black"
+            >
+              <Link to="/blog/submit">Share Your Story</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -106,13 +152,21 @@ const Blog = () => {
             );
           })}
         </div>
+        {onlyCommunity && (
+          <div className="max-w-6xl mx-auto mt-4 flex items-center justify-center gap-3 text-sm text-charcoal">
+            <span className="inline-flex items-center gap-2 bg-stone-alt rounded-full px-3 py-1.5">
+              Showing community posts only
+              <button onClick={clearCommunityFilter} className="text-olive hover:underline">Clear</button>
+            </span>
+          </div>
+        )}
       </section>
 
       <section className="py-16 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <p className="text-center text-muted-foreground py-16">
-              No articles match your search.
+              {onlyCommunity ? "No community posts yet — be the first to share!" : "No articles match your search."}
             </p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,14 +177,21 @@ const Blog = () => {
                   aria-label={`Read article: ${post.title}`}
                   className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-md hover:-translate-y-1 transition-all group flex flex-col"
                 >
-                  <img
-                    src={post.heroImg}
-                    alt={post.heroAlt}
-                    className="w-full h-48 object-cover"
-                    loading="lazy"
-                    width={800}
-                    height={450}
-                  />
+                  <div className="relative">
+                    <img
+                      src={post.heroImg}
+                      alt={post.heroAlt}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                      width={800}
+                      height={450}
+                    />
+                    {isCommunity(post) && (
+                      <span className="absolute top-3 left-3 inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-near-black/85 text-primary-foreground backdrop-blur-sm">
+                        Community
+                      </span>
+                    )}
+                  </div>
                   <div className="p-6 flex flex-col flex-1">
                     <span className="inline-block text-xs uppercase tracking-widest text-brass mb-3">
                       {post.category}
@@ -155,6 +216,7 @@ const Blog = () => {
         </div>
       </section>
 
+      <CommunityCta />
       <FinalCta />
       <Footer />
     </div>
