@@ -40,7 +40,7 @@ const FeaturedProjects = () => {
                   <p className="text-primary-foreground/85 text-xs">{p.location}</p>
                 </div>
               </div>
-              <span className="absolute bottom-4 left-4 text-primary-foreground text-xs font-medium group-hover:opacity-0 transition-opacity">
+              <span className="absolute bottom-4 left-4 z-10 inline-flex items-center bg-near-black/75 backdrop-blur-sm text-primary-foreground text-xs font-medium px-3 py-1 rounded-full shadow-md group-hover:opacity-0 transition-opacity">
                 {p.location}
               </span>
             </Link>
