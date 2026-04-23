@@ -467,6 +467,36 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "bathroom-remodel-planning",
+    cat: "Bathroom Remodel",
+    title: "Bathroom remodel planning for layout, plumbing, and finish",
+    img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200",
+    intro:
+      "Bathroom remodels punch above their weight on daily quality of life and resale value, but the small footprint hides a surprising amount of complexity. Plumbing, waterproofing, ventilation, and finish detailing all have to land in a room that's often under one hundred square feet.",
+    sections: [
+      {
+        heading: "Decide the scope honestly",
+        body: "A surface refresh — paint, mirror, light fixture, faucet — is a weekend-scale project. A full remodel that moves the toilet, relocates the shower, or expands the footprint is a six-to-ten-week effort that touches plumbing, electrical, framing, and tile. The middle ground — keeping the layout but replacing every finish — is where most homeowners actually land. Naming the scope out loud at the start prevents the slow creep that turns a three-week refresh into a three-month build.",
+      },
+      {
+        heading: "Plumbing and waterproofing",
+        body: "Behind the tile, the work that matters most is invisible. Proper pan slope, curb detailing, membrane selection, and niche waterproofing are the difference between a shower that lasts twenty years and one that leaks into the subfloor in five. If walls are open, this is also the moment to upgrade supply lines, add shutoffs, and re-route any drain that has caused trouble in the past.",
+      },
+      {
+        heading: "Ventilation and moisture control",
+        body: "An undersized or poorly ducted exhaust fan is the most common reason bathrooms develop mildew, peeling paint, and warped trim. Size the fan for the room volume, vent it directly outside (never into the attic), and put it on a timer or humidity sensor. Good ventilation protects every other dollar spent on finishes.",
+      },
+      {
+        heading: "Layout and storage",
+        body: "Small bathrooms reward careful millwork — a recessed medicine cabinet, a shower niche, drawers instead of doors under the vanity. Walk through the morning routine on paper before finalizing the plan: where the towel hangs, where the toothbrush charges, where wet feet land coming out of the shower. The layout that handles those moments well will feel twice as large as one that doesn't.",
+      },
+      {
+        heading: "Finishes that hold up",
+        body: "Choose tile, stone, and metals rated for wet environments and the local water profile. Matte porcelain reads softer and hides water spots better than high-gloss. Quartz vanity tops outperform marble for daily use. PVD-finished hardware resists pitting in coastal air far better than standard chrome. Spend on the items touched daily and let the secondary surfaces support them quietly.",
+      },
+    ],
+  },
 ];
 
 export type Project = {
