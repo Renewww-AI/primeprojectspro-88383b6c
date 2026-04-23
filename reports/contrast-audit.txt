@@ -9,8 +9,8 @@ WCAG AA Contrast Audit
   ✓ primary button label                    primary-foreground           on primary         13.37:1  (need 3:1) [large]
   ✓ olive link on card                      olive                        on card            14.48:1  (need 4.5:1)
   ✓ olive link on stone-bg                  olive                        on stone-bg        12.83:1  (need 4.5:1)
-  ✓ brass eyebrow on card                   brass                        on card            4.63:1  (need 4.5:1)
-  ✗ brass eyebrow on stone-bg               brass                        on stone-bg        4.10:1  (need 4.5:1)
+  ✓ brass eyebrow on card                   brass                        on card            5.33:1  (need 4.5:1)
+  ✓ brass eyebrow on stone-bg               brass                        on stone-bg        4.72:1  (need 4.5:1)
 
 ▌ hero/sub-page hero
   ✓ hero H1                                 primary-foreground           on near-black      17.48:1  (need 3:1) [large]
@@ -35,7 +35,7 @@ WCAG AA Contrast Audit
   ✓ Community badge on image                primary-foreground           on near-black      17.48:1  (need 4.5:1)
   ✓ card title                              charcoal                     on card            17.18:1  (need 3:1) [large]
   ✓ card preview text                       muted-foreground             on card            5.68:1  (need 4.5:1)
-  ✓ category eyebrow                        brass                        on card            4.63:1  (need 4.5:1)
+  ✓ category eyebrow                        brass                        on card            5.33:1  (need 4.5:1)
   ✓ Showing Community Posts pill            charcoal                     on stone-alt       13.96:1  (need 4.5:1)
 
 ▌ ServiceGrid
@@ -46,4 +46,4 @@ WCAG AA Contrast Audit
   ✓ card desc on stone-bg                   muted-foreground             on stone-bg        5.03:1  (need 4.5:1)
 
 ----------------------
-Total: 28  Pass: 27  Fail: 1
+Total: 28  Pass: 28  Fail: 0
