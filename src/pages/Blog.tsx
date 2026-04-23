@@ -155,7 +155,7 @@ const Blog = () => {
         {onlyCommunity && (
           <div className="max-w-6xl mx-auto mt-4 flex items-center justify-center gap-3 text-sm text-charcoal">
             <span className="inline-flex items-center gap-2 bg-stone-alt rounded-full px-3 py-1.5">
-              Showing community posts only
+              Showing Community Posts
               <button onClick={clearCommunityFilter} className="text-olive hover:underline">Clear</button>
             </span>
           </div>
