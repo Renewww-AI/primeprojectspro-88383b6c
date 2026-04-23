@@ -29,9 +29,10 @@ const Header = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <span className="w-3 h-3 bg-olive rounded-sm inline-block" />
-          <span className="font-serif text-[22px] text-charcoal">Prime Projects</span>
+        <a href="#" className="flex items-baseline" aria-label="PrimeProjects.Pro">
+          <span className="font-serif text-[22px] text-charcoal">PrimeProjects</span>
+          <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
+          <span className="font-serif text-[22px] text-charcoal">Pro</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-6">
