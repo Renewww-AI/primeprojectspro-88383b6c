@@ -71,7 +71,7 @@ const HeroSection = () => {
         aria-hidden="true"
         loading="lazy"
         decoding="async"
-        className="pointer-events-none select-none absolute -left-32 md:-left-48 lg:-left-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] h-auto opacity-[0.10]"
+        className="pointer-events-none select-none absolute -left-32 md:-left-48 lg:-left-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] h-auto opacity-[0.20]"
       />
 
       <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
