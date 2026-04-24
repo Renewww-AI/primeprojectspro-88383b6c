@@ -1,3 +1,7 @@
+import kitchenImg from "@/assets/service-kitchen.jpg";
+import bathroomImg from "@/assets/service-bathroom.jpg";
+import landscapingImg from "@/assets/service-landscaping.jpg";
+
 export type BlogCategory =
   | "All Posts"
   | "Planning Your Project"
@@ -57,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     preview:
       "Kitchen remodels reward early decisions and punish improvised ones. Here's the order that actually works.",
     readTime: "7 min read",
-    heroImg: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80",
+    heroImg: kitchenImg,
     heroAlt: "Bright, modern kitchen remodel with island and pendant lights",
     body: [
       "Most stressful kitchen remodels share the same root cause: decisions made out of order. Cabinets ordered before the layout is locked. Tile picked before the lighting plan exists. Appliances bought because of a sale, then the kitchen redesigned around them. Each of those choices, in isolation, feels harmless. Together they explain almost every overrun story.",
@@ -115,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     preview:
       "Bathroom budgets in Carlsbad have shifted. Here's what the numbers actually look like in 2025.",
     readTime: "7 min read",
-    heroImg: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=80",
+    heroImg: bathroomImg,
     heroAlt: "Modern Carlsbad bathroom remodel with stone tile",
     body: [
       "Bathroom remodel pricing in Carlsbad in 2025 sits in a wider range than most homeowners expect. A secondary bathroom refresh can land in the mid-five-figure range, while a full primary suite remodel with custom tile, glass, and stone routinely crosses into six figures. The variables that move that number are surprisingly few.",
@@ -174,7 +178,7 @@ export const blogPosts: BlogPost[] = [
     preview:
       "A short, honest list of what's actually worth doing in spring — and what isn't.",
     readTime: "4 min read",
-    heroImg: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1600&q=80",
+    heroImg: landscapingImg,
     heroAlt: "San Diego home with spring landscaping",
     body: [
       "San Diego doesn't have a real winter, which makes spring home checklists feel optional. They aren't — they're just different. Sun, salt, marine layer, and wildfire-season prep all matter more here than freeze cycles.",

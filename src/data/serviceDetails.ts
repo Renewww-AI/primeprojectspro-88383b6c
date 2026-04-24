@@ -1,3 +1,9 @@
+import roofingImg from "@/assets/service-roofing.jpg";
+import audioImg from "@/assets/service-audio.jpg";
+import landscapingImg from "@/assets/service-landscaping.jpg";
+import kitchenImg from "@/assets/service-kitchen.jpg";
+import bathroomImg from "@/assets/service-bathroom.jpg";
+
 export type ServiceDetail = {
   slug: string;
   title: string;
@@ -20,8 +26,7 @@ export const serviceDetails: ServiceDetail[] = [
     h1: "Kitchen Remodels Built Around How Your Household Actually Lives",
     metaDescription:
       "Plan a San Diego kitchen remodel with confidence. Layout, cabinetry, surfaces, lighting, and trade coordination handled with concierge-level oversight.",
-    heroImg:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80",
+    heroImg: kitchenImg,
     heroAlt: "Modern kitchen remodel with island and warm lighting",
     intro:
       "A kitchen project touches more of daily life than any other room — and more of your budget. The best outcomes start with honest planning, not catalog shopping.",
@@ -68,8 +73,7 @@ export const serviceDetails: ServiceDetail[] = [
     h1: "Bathroom Remodels That Hold Up Long After the Reveal Photos",
     metaDescription:
       "Bathroom remodels in San Diego County built around layout, waterproofing, and finish quality — with concierge oversight from design through walkthrough.",
-    heroImg:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=80",
+    heroImg: bathroomImg,
     heroAlt: "Modern bathroom with walk-in shower and stone tile",
     intro:
       "A bathroom is one of the smallest rooms in the house and one of the most unforgiving to remodel. Every surface is wet, every joint matters, and every shortcut shows up later.",
@@ -116,8 +120,7 @@ export const serviceDetails: ServiceDetail[] = [
     h1: "Home Audio and Smart Home Systems That Quietly Disappear Into the Architecture",
     metaDescription:
       "Whole-home audio, media rooms, and smart home integration planned and installed with clean wiring, intuitive controls, and concierge coordination.",
-    heroImg:
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
+    heroImg: audioImg,
     heroAlt: "Modern living room with integrated audio and smart controls",
     intro:
       "The best home audio and smart home systems are the ones you almost forget are there. No tangle of remotes, no ceiling speakers staring at you, no app that needs a tutorial.",
@@ -164,8 +167,7 @@ export const serviceDetails: ServiceDetail[] = [
     h1: "Landscaping and Outdoor Spaces Planned for the Way San Diego Actually Lives Outdoors",
     metaDescription:
       "Front and back yard landscaping in San Diego County — planting plans, hardscape, irrigation, lighting, and outdoor living, coordinated as one project.",
-    heroImg:
-      "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1600&q=80",
+    heroImg: landscapingImg,
     heroAlt: "Modern San Diego landscaping with patio and drought-tolerant planting",
     intro:
       "A yard is one of the few projects where the result keeps changing for years. Plants grow, light shifts, and the design either matures into something better — or fights you the whole time.",
@@ -212,8 +214,7 @@ export const serviceDetails: ServiceDetail[] = [
     h1: "Roofing and Gutter Work That Honestly Tells You What the Home Needs",
     metaDescription:
       "Roof replacement and gutter coordination in San Diego County — honest assessments, system options, and clean execution with concierge oversight.",
-    heroImg:
-      "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1600&q=80",
+    heroImg: roofingImg,
     heroAlt: "Roofer actively working on a residential rooftop",
     intro:
       "Roofing is the one project where 'looks fine from the ground' costs the most over time. The right call usually comes down to honest condition information, not aggressive sales pressure.",
