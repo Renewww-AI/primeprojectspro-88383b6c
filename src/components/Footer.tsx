@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
+import logoMark from "@/assets/logo-pp-mark-header@2x.png";
 
 type IconProps = { className?: string };
 
@@ -73,8 +74,18 @@ const linkClass =
 
 const Footer = () => {
   return (
-    <footer className="bg-near-black py-16 px-4 md:px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+    <footer className="relative bg-near-black py-16 px-4 md:px-6 overflow-hidden">
+      {/* Subtle screened-back logo watermark — large, bleeding off the right edge */}
+      <img
+        src={logoMark}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="pointer-events-none select-none absolute -right-32 md:-right-48 lg:-right-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] h-auto opacity-[0.08]"
+      />
+
+      <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
         {/* Column 1 — Company info (spans 2 on lg) */}
         <div className="lg:col-span-2">
           <span className="font-serif text-2xl text-primary-foreground">Prime Projects</span>
@@ -162,7 +173,7 @@ const Footer = () => {
       </div>
 
       {/* Divider + bottom bar */}
-      <div className="max-w-6xl mx-auto border-t border-primary-foreground/10 mt-12 pt-6 flex flex-wrap justify-between gap-4">
+      <div className="relative max-w-6xl mx-auto border-t border-primary-foreground/10 mt-12 pt-6 flex flex-wrap justify-between gap-4">
         <span className="text-xs text-primary-foreground/30">
           © 2025 Prime Projects. All rights reserved.
         </span>
