@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
+import logoMark from "@/assets/logo-pp-mark-header@2x.png";
 
 type IconProps = { className?: string };
 
