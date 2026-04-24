@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logoMark from "@/assets/logo-pp-mark.png";
 
 const navLinks = [
   { label: "Services", href: "/#services", type: "anchor" as const },
@@ -73,10 +74,21 @@ const Header = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline" aria-label="PrimeProjects.Pro — home">
-          <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>PrimeProjects</span>
-          <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
-          <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>Pro</span>
+        <Link to="/" className="flex items-center gap-3" aria-label="PrimeProjects.Pro — home">
+          <img
+            src={logoMark}
+            alt="Prime Projects"
+            className={`h-9 w-auto md:h-10 transition-all ${
+              overImage ? "drop-shadow-md" : ""
+            }`}
+            width={480}
+            height={230}
+          />
+          <span className="flex items-baseline">
+            <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>PrimeProjects</span>
+            <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
+            <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>Pro</span>
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
