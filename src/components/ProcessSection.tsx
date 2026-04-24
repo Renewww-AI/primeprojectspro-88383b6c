@@ -31,7 +31,7 @@ const ProcessSection = () => {
         </div>
         <div className="mt-12">
           <a
-            href="#intake"
+            href="/#intake"
             className="border border-primary-foreground text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-primary-foreground hover:text-charcoal transition-all inline-block"
           >
             Schedule Your Consultation

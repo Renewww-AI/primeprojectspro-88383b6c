@@ -11,7 +11,7 @@ const FinalCta = () => {
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a
-            href="#intake"
+            href="/#intake"
             className="bg-card text-charcoal rounded-full px-8 py-3 font-medium hover:bg-stone-alt transition-all"
           >
             Schedule a Consultation
