@@ -88,7 +88,15 @@ const Footer = () => {
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
         {/* Column 1 — Company info (spans 2 on lg) */}
         <div className="lg:col-span-2">
-          <span className="font-serif text-2xl text-primary-foreground">Prime Projects</span>
+          <span className="inline-flex items-baseline whitespace-nowrap leading-none">
+            <span className="font-serif text-[20px] md:text-[22px] text-primary-foreground">
+              PrimeProjects
+            </span>
+            <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
+            <span className="font-serif text-[20px] md:text-[22px] text-primary-foreground">
+              Pro
+            </span>
+          </span>
           <p className="text-sm text-primary-foreground/60 mt-3 max-w-xs leading-relaxed">
             Prime Projects is a homeowner-first residential improvement brand focused on clear
             planning, premium service, and quality-driven project outcomes.
