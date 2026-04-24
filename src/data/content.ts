@@ -40,7 +40,7 @@ export const services: Service[] = [
   {
     slug: "kitchen-remodel",
     title: "Kitchen Remodels",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200",
+    img: kitchenImg,
     alt: "Kitchen remodel",
     body: "Create a kitchen that functions better, feels more refined, and fits the way your household actually lives.",
     intro:
@@ -61,7 +61,7 @@ export const services: Service[] = [
   {
     slug: "bathroom-remodel",
     title: "Bathroom Remodels",
-    img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200",
+    img: bathroomImg,
     alt: "Bathroom remodel",
     body: "Upgrade comfort, layout, finishes, and long-term value with a more thoughtful bathroom remodel plan.",
     intro:
@@ -82,7 +82,7 @@ export const services: Service[] = [
   {
     slug: "roofing",
     title: "Roofing",
-    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1600&q=80",
+    img: roofingImg,
     alt: "Roofer actively working on a residential rooftop",
     body: "Protect the home with roofing guidance centered on condition, options, scope clarity, and quality workmanship.",
     intro:
@@ -145,7 +145,7 @@ export const services: Service[] = [
   {
     slug: "home-audio",
     title: "Home Audio",
-    img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1600&q=80",
+    img: audioImg,
     alt: "Modern home audio system in living room",
     body: "Whole-home audio, media rooms, and integrated sound systems planned for clarity, coverage, and clean installation.",
     intro:
@@ -166,7 +166,7 @@ export const services: Service[] = [
   {
     slug: "landscaping",
     title: "Landscaping",
-    img: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1600&q=80",
+    img: landscapingImg,
     alt: "Modern residential landscaping",
     body: "Front and back yard landscape design, planting, irrigation, and hardscape integration for lasting curb appeal.",
     intro:
@@ -357,7 +357,7 @@ export const articles: Article[] = [
     slug: "kitchen-remodel-timeline",
     cat: "Kitchen Remodel",
     title: "Kitchen remodel budgeting and scope priorities",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200",
+    img: kitchenImg,
     intro:
       "Kitchen remodels reward early decisions about scope, layout, and finish tier. The biggest budget swings almost always trace back to choices made in the first two weeks — not the last two.",
     sections: [
@@ -387,7 +387,7 @@ export const articles: Article[] = [
     slug: "roof-replacement-vs-repair",
     cat: "Roofing",
     title: "What to consider before replacing a roof",
-    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1200",
+    img: roofingImg,
     intro:
       "Roof decisions hinge on age, system condition, and how long you plan to stay in the home. A clear-eyed assessment up front is worth more than any single bid.",
     sections: [
@@ -477,7 +477,7 @@ export const articles: Article[] = [
     slug: "bathroom-remodel-planning",
     cat: "Bathroom Remodel",
     title: "Bathroom remodel planning for layout, plumbing, and finish",
-    img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200",
+    img: bathroomImg,
     intro:
       "Bathroom remodels punch above their weight on daily quality of life and resale value, but the small footprint hides a surprising amount of complexity. Plumbing, waterproofing, ventilation, and finish detailing all have to land in a room that's often under one hundred square feet.",
     sections: [
@@ -526,7 +526,7 @@ export const projects: Project[] = [
     badge: "Kitchen Remodel",
     location: "Encinitas, CA",
     overlay: "Coastal kitchen remodel featuring custom cabinetry, quartz countertops, and improved natural light.",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400",
+    img: kitchenImg,
     intro: "A full coastal kitchen remodel focused on light, flow, and refined material selection.",
     challenge:
       "The original kitchen felt closed off from the dining area, suffered from low natural light, and used aging finishes that no longer matched how the household actually cooked and entertained. Storage was inefficient and the island created a bottleneck during weekend gatherings.",
@@ -580,7 +580,7 @@ export const projects: Project[] = [
     badge: "Roofing",
     location: "Oceanside, CA",
     overlay: "Full roof replacement and exterior refresh including fascia, gutters, and trim painting.",
-    img: "https://images.unsplash.com/photo-1564182999932-bc192d89ab22?w=1400&q=80",
+    img: roofingImg,
     intro: "Complete roof replacement coordinated with fascia, gutter, and trim refresh.",
     challenge:
       "A twenty-five-year-old shingle roof was showing failures across multiple zones — granule loss, lifted shingles, and worn flashing — and prior patch repairs were no longer holding. Fascia and gutters were also at the end of their useful life.",
