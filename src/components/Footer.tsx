@@ -19,12 +19,12 @@ const Footer = () => {
             <span className="text-base font-medium">(619) 000-0000</span>
           </a>
           <div className="mt-4">
-            <Link
-              to="/#intake"
+            <a
+              href="/#intake"
               className="inline-block bg-olive text-primary-foreground rounded-full px-6 py-2.5 text-sm font-medium hover:bg-olive-dark transition-all"
             >
               Schedule a Project Consultation
-            </Link>
+            </a>
           </div>
         </div>
 

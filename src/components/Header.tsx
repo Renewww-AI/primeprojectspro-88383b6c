@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Services", href: "/#services", type: "anchor" as const },
@@ -15,12 +15,43 @@ const navLinks = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Smart anchor handler — works from any page
+  const handleAnchor = (e: React.MouseEvent, href: string) => {
+    if (!href.startsWith("/#")) return;
+    const hash = href.slice(2); // e.g. "intake"
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else window.location.hash = hash;
+    } else {
+      e.preventDefault();
+      navigate(`/#${hash}`);
+    }
+    setMobileOpen(false);
+  };
+
+  // After navigating to "/" with a hash, scroll to it
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const id = location.hash.replace("#", "");
+      // wait for paint
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <header
@@ -29,11 +60,11 @@ const Header = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-baseline" aria-label="PrimeProjects.Pro">
+        <Link to="/" className="flex items-baseline" aria-label="PrimeProjects.Pro — home">
           <span className="font-serif text-[22px] text-charcoal">PrimeProjects</span>
           <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
           <span className="font-serif text-[22px] text-charcoal">Pro</span>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) =>
@@ -49,6 +80,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleAnchor(e, link.href)}
                 className="text-sm text-charcoal hover:text-olive transition-colors"
               >
                 {link.label}
@@ -62,7 +94,8 @@ const Header = () => {
             (619) 000-0000
           </a>
           <a
-            href="#intake"
+            href="/#intake"
+            onClick={(e) => handleAnchor(e, "/#intake")}
             className="hidden sm:inline-flex bg-olive text-primary-foreground rounded-full px-5 py-2 text-sm font-medium hover:bg-olive-dark transition-all"
           >
             Schedule a Consultation
@@ -102,7 +135,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => handleAnchor(e, link.href)}
                 className="text-lg text-charcoal hover:text-olive transition-colors"
               >
                 {link.label}
@@ -111,8 +144,8 @@ const Header = () => {
           )}
           <a href="tel:6190000000" className="text-brass text-sm mt-4">(619) 000-0000</a>
           <a
-            href="#intake"
-            onClick={() => setMobileOpen(false)}
+            href="/#intake"
+            onClick={(e) => handleAnchor(e, "/#intake")}
             className="bg-olive text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-olive-dark transition-all"
           >
             Schedule a Consultation
