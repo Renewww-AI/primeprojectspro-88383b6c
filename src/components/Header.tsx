@@ -99,7 +99,7 @@ const Header = () => {
               src={logoMark}
               srcSet={`${logoMark} 1x, ${logoMark2x} 2x`}
               alt="Prime Projects"
-              width={96}
+              width={167}
               height={96}
               decoding="async"
               fetchPriority="high"
