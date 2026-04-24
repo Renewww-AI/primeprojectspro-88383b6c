@@ -28,23 +28,27 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
               width={1600}
               height={900}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-near-black/70 via-near-black/55 to-near-black/75" />
+            {/* Layered scrims: solid base + left-anchored gradient + bottom darken
+                guarantees white text reads on any image (light or dark) */}
+            <div className="absolute inset-0 bg-near-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/55 to-near-black/30" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-near-black/80 to-transparent" />
           </div>
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto [text-shadow:0_1px_18px_rgba(0,0,0,0.45)]">
             <Link
               to="/"
-              className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline mb-6 inline-block"
+              className="text-sm text-white/90 hover:text-white hover:underline mb-6 inline-block"
             >
               ← Back to home
             </Link>
             {eyebrow && (
-              <p className="text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-4">{eyebrow}</p>
+              <p className="text-xs uppercase tracking-widest text-[hsl(36_60%_78%)] mb-4">{eyebrow}</p>
             )}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 leading-tight drop-shadow-sm">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
               {title}
             </h1>
             {intro && (
-              <p className="text-lg text-primary-foreground/95 leading-relaxed max-w-2xl">
+              <p className="text-lg text-white/95 leading-relaxed max-w-2xl">
                 {intro}
               </p>
             )}
