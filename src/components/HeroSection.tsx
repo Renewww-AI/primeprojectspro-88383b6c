@@ -6,7 +6,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import heroOriginal from "@/assets/hero-outdoor.jpg";
-import logoMark from "@/assets/logo-pp-mark-header@2x.png";
+import logoMark from "@/assets/logo-pp-mark-4k.png";
 
 const slides = [
   {
