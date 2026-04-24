@@ -33,9 +33,9 @@ const about: [string, string][] = [
 ];
 
 const social: { label: string; href: string; Icon: React.ComponentType<{ className?: string }> }[] = [
-  { label: "Facebook", href: "https://www.facebook.com/", Icon: FaFacebookF },
-  { label: "Google Business Profile", href: "https://www.google.com/business/", Icon: FaGoogle },
-  { label: "Instagram", href: "https://www.instagram.com/", Icon: FaInstagram },
+  { label: "Facebook", href: "https://www.facebook.com/", Icon: FacebookIcon },
+  { label: "Google Business Profile", href: "https://www.google.com/business/", Icon: GoogleIcon },
+  { label: "Instagram", href: "https://www.instagram.com/", Icon: InstagramIcon },
 ];
 
 const ColHeader = ({ children }: { children: React.ReactNode }) => (
