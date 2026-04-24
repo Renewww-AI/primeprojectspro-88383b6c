@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logoMark from "@/assets/logo-pp-mark.png";
+import logoMark from "@/assets/logo-pp-mark-96.png";
+import logoMark2x from "@/assets/logo-pp-mark-192.png";
 
 const navLinks = [
   { label: "Services", href: "/#services", type: "anchor" as const },
@@ -74,20 +75,31 @@ const Header = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3" aria-label="PrimeProjects.Pro — home">
+        <Link
+          to="/"
+          className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
+          aria-label="Prime Projects — home"
+        >
           <img
             src={logoMark}
+            srcSet={`${logoMark} 1x, ${logoMark2x} 2x`}
             alt="Prime Projects"
-            className={`h-9 w-auto md:h-10 transition-all ${
+            width={96}
+            height={46}
+            decoding="async"
+            fetchPriority="high"
+            className={`h-8 md:h-10 w-auto shrink-0 transition-all ${
               overImage ? "drop-shadow-md" : ""
             }`}
-            width={480}
-            height={230}
           />
-          <span className="flex items-baseline">
-            <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>PrimeProjects</span>
+          <span className="hidden sm:flex items-baseline whitespace-nowrap leading-none">
+            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+              PrimeProjects
+            </span>
             <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
-            <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>Pro</span>
+            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+              Pro
+            </span>
           </span>
         </Link>
 

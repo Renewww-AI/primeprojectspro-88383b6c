@@ -6,7 +6,8 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import heroOriginal from "@/assets/hero-outdoor.jpg";
-import logoMark from "@/assets/logo-pp-mark.png";
+import logoMark from "@/assets/logo-pp-mark-480.png";
+import logoMarkLg from "@/assets/logo-pp-mark-1200.png";
 
 const slides = [
   {
@@ -67,8 +68,12 @@ const HeroSection = () => {
       {/* Subtle screened-back logo watermark — large, partially cut off */}
       <img
         src={logoMark}
+        srcSet={`${logoMark} 480w, ${logoMarkLg} 1200w`}
+        sizes="(min-width: 1024px) 960px, (min-width: 768px) 820px, 640px"
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none select-none absolute -left-32 md:-left-48 lg:-left-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] opacity-[0.08] mix-blend-multiply"
       />
 
