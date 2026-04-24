@@ -53,17 +53,30 @@ const Header = () => {
     }
   }, [location.pathname, location.hash]);
 
+  // Light/dark adaptive text — when transparent over a hero image, use white for legibility
+  const overImage = !scrolled;
+  const wordmarkColor = overImage ? "text-primary-foreground drop-shadow-md" : "text-charcoal";
+  const navLinkColor = overImage
+    ? "text-primary-foreground/95 hover:text-primary-foreground drop-shadow-md"
+    : "text-charcoal hover:text-olive";
+  const phoneColor = overImage
+    ? "text-primary-foreground/95 hover:text-primary-foreground drop-shadow-md"
+    : "text-brass";
+  const burgerColor = overImage ? "bg-primary-foreground" : "bg-charcoal";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+        scrolled
+          ? "bg-card/95 backdrop-blur-sm shadow-sm"
+          : "bg-gradient-to-b from-near-black/45 via-near-black/20 to-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-baseline" aria-label="PrimeProjects.Pro — home">
-          <span className="font-serif text-[22px] text-charcoal">PrimeProjects</span>
+          <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>PrimeProjects</span>
           <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
-          <span className="font-serif text-[22px] text-charcoal">Pro</span>
+          <span className={`font-serif text-[22px] transition-colors ${wordmarkColor}`}>Pro</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
@@ -72,7 +85,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-sm text-charcoal hover:text-olive transition-colors"
+                className={`text-sm transition-colors ${navLinkColor}`}
               >
                 {link.label}
               </Link>
@@ -81,7 +94,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchor(e, link.href)}
-                className="text-sm text-charcoal hover:text-olive transition-colors"
+                className={`text-sm transition-colors ${navLinkColor}`}
               >
                 {link.label}
               </a>
@@ -90,13 +103,13 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="tel:6190000000" className="hidden md:block text-sm text-brass">
+          <a href="tel:6190000000" className={`hidden md:block text-sm transition-colors ${phoneColor}`}>
             (619) 000-0000
           </a>
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="hidden sm:inline-flex bg-olive text-primary-foreground rounded-full px-5 py-2 text-sm font-medium hover:bg-olive-dark transition-all"
+            className="hidden sm:inline-flex bg-olive text-primary-foreground rounded-full px-5 py-2 text-sm font-medium hover:bg-olive-dark transition-all shadow-sm"
           >
             Schedule a Consultation
           </a>
@@ -105,9 +118,9 @@ const Header = () => {
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
-            <span className="w-6 h-0.5 bg-charcoal" />
-            <span className="w-6 h-0.5 bg-charcoal" />
-            <span className="w-6 h-0.5 bg-charcoal" />
+            <span className={`w-6 h-0.5 transition-colors ${burgerColor}`} />
+            <span className={`w-6 h-0.5 transition-colors ${burgerColor}`} />
+            <span className={`w-6 h-0.5 transition-colors ${burgerColor}`} />
           </button>
         </div>
       </div>
