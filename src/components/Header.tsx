@@ -3,6 +3,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logoMark from "@/assets/logo-pp-mark-96.png";
 import logoMark2x from "@/assets/logo-pp-mark-192.png";
 
+const LogoFallback = ({ className }: { className?: string }) => (
+  <span
+    className={`inline-flex items-center justify-center rounded-md bg-near-black text-primary-foreground font-serif text-sm font-semibold shrink-0 ${className ?? ""}`}
+    style={{ aspectRatio: "1 / 1" }}
+    aria-label="Prime Projects"
+  >
+    PP
+  </span>
+);
+
 const navLinks = [
   { label: "Services", href: "/#services", type: "anchor" as const },
   { label: "Locations", href: "/#locations", type: "anchor" as const },
@@ -17,6 +27,7 @@ const navLinks = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -80,18 +91,23 @@ const Header = () => {
           className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
           aria-label="Prime Projects — home"
         >
-          <img
-            src={logoMark}
-            srcSet={`${logoMark} 1x, ${logoMark2x} 2x`}
-            alt="Prime Projects"
-            width={96}
-            height={46}
-            decoding="async"
-            fetchPriority="high"
-            className={`h-8 md:h-10 w-auto shrink-0 transition-all ${
-              overImage ? "drop-shadow-md" : ""
-            }`}
-          />
+          {logoFailed ? (
+            <LogoFallback className={`h-8 md:h-10 ${overImage ? "drop-shadow-md" : ""}`} />
+          ) : (
+            <img
+              src={logoMark}
+              srcSet={`${logoMark} 1x, ${logoMark2x} 2x`}
+              alt="Prime Projects"
+              width={96}
+              height={46}
+              decoding="async"
+              fetchPriority="high"
+              onError={() => setLogoFailed(true)}
+              className={`h-8 md:h-10 w-auto shrink-0 transition-all ${
+                overImage ? "drop-shadow-md" : ""
+              }`}
+            />
+          )}
           <span className="hidden sm:flex items-baseline whitespace-nowrap leading-none">
             <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               PrimeProjects

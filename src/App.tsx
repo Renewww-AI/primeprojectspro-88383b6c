@@ -19,6 +19,7 @@ import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminSubmissions from "./pages/AdminSubmissions.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
+import DebugLogos from "./pages/DebugLogos.tsx";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/admin/blog-submissions" element={<AdminSubmissions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/debug/logos" element={<DebugLogos />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
