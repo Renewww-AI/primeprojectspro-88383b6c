@@ -74,7 +74,7 @@ const linkClass =
 
 const Footer = () => {
   return (
-    <footer className="relative bg-near-black py-16 px-4 md:px-6 overflow-hidden">
+    <footer className="relative bg-near-black py-16 px-4 md:px-6 overflow-hidden opacity-90">
       {/* Subtle screened-back logo watermark — large, bleeding off the right edge */}
       <img
         src={logoMark}
