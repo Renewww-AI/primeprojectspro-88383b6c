@@ -53,15 +53,6 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
         </section>
       ) : (
         <section className="relative pt-32 pb-12 px-4 md:px-6 bg-card overflow-hidden">
-          {/* Screened-back logo watermark on plain hero */}
-          <img
-            src={watermarkMark}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            className="pointer-events-none select-none absolute -right-20 md:-right-32 lg:-right-48 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] lg:w-[760px] h-auto opacity-[0.18]"
-          />
           <div className="relative max-w-4xl mx-auto">
             <Link to="/" className="text-sm text-olive hover:underline mb-6 inline-block">
               ← Back to home
