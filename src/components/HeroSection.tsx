@@ -6,6 +6,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import heroOriginal from "@/assets/hero-outdoor.jpg";
+import logoMark from "@/assets/logo-pp-mark.png";
 
 const slides = [
   {
@@ -62,8 +63,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-background pt-32 pb-24 md:pt-40 md:pb-32 px-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section className="relative bg-background pt-32 pb-24 md:pt-40 md:pb-32 px-6 overflow-hidden">
+      {/* Subtle screened-back logo watermark — large, partially cut off */}
+      <img
+        src={logoMark}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -left-32 md:-left-48 lg:-left-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] opacity-[0.08] mix-blend-multiply"
+      />
+
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left column */}
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-8 shadow-sm">
@@ -73,9 +82,13 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-near-black mb-8 tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-near-black mb-6 tracking-tight">
             Premium home improvement, guided from first plan to final result.
           </h1>
+
+          <p className="font-serif italic text-xl md:text-2xl text-brass mb-6 tracking-wide">
+            Planned Right. Managed Better.
+          </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
             Prime Projects helps homeowners move forward with clarity on ADUs, kitchens, baths,
