@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Phone, Facebook, Instagram, Globe } from "lucide-react";
+import { Phone, Globe } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 
 const services: [string, string][] = [
   ["Kitchen Remodel", "/services/kitchen-remodel"],
@@ -31,10 +32,10 @@ const about: [string, string][] = [
   ["Terms", "/terms"],
 ];
 
-const social: { label: string; href: string; Icon: typeof Facebook }[] = [
-  { label: "Facebook", href: "https://www.facebook.com/", Icon: Facebook },
-  { label: "Google Business Profile", href: "https://www.google.com/business/", Icon: Globe },
-  { label: "Instagram", href: "https://www.instagram.com/", Icon: Instagram },
+const social: { label: string; href: string; Icon: React.ComponentType<{ className?: string }> }[] = [
+  { label: "Facebook", href: "https://www.facebook.com/", Icon: FaFacebookF },
+  { label: "Google Business Profile", href: "https://www.google.com/business/", Icon: FaGoogle },
+  { label: "Instagram", href: "https://www.instagram.com/", Icon: FaInstagram },
 ];
 
 const ColHeader = ({ children }: { children: React.ReactNode }) => (
