@@ -1,6 +1,30 @@
 import { Link } from "react-router-dom";
-import { Phone, Globe } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
+import { Phone } from "lucide-react";
+
+type IconProps = { className?: string };
+
+const FacebookIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M13.5 21v-7.5h2.52l.38-2.93H13.5V8.7c0-.85.24-1.43 1.45-1.43h1.55V4.66c-.27-.04-1.19-.11-2.26-.11-2.24 0-3.77 1.37-3.77 3.88v2.16H8v2.93h2.47V21h3.03Z"/>
+  </svg>
+);
+
+const InstagramIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const GoogleIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M21.6 12.23c0-.65-.06-1.27-.17-1.86H12v3.52h5.39a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.89-1.74 2.98-4.3 2.98-7.18Z"/>
+    <path d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.23-2.5c-.9.6-2.04.96-3.39.96-2.6 0-4.81-1.76-5.6-4.13H3.07v2.59A10 10 0 0 0 12 22Z"/>
+    <path d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3.07a10 10 0 0 0 0 9l3.33-2.6Z"/>
+    <path d="M12 6.07c1.47 0 2.78.5 3.82 1.5l2.86-2.86A10 10 0 0 0 3.07 7.5l3.33 2.6c.79-2.37 3-4.13 5.6-4.13Z"/>
+  </svg>
+);
 
 const services: [string, string][] = [
   ["Kitchen Remodel", "/services/kitchen-remodel"],
