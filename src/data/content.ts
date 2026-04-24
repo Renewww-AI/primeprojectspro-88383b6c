@@ -1,3 +1,9 @@
+import roofingImg from "@/assets/service-roofing.jpg";
+import audioImg from "@/assets/service-audio.jpg";
+import landscapingImg from "@/assets/service-landscaping.jpg";
+import kitchenImg from "@/assets/service-kitchen.jpg";
+import bathroomImg from "@/assets/service-bathroom.jpg";
+
 export type Service = {
   slug: string;
   title: string;
