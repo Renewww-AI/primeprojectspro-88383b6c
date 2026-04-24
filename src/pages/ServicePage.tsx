@@ -3,57 +3,106 @@ import SubPageLayout from "@/components/SubPageLayout";
 import Seo, { breadcrumbJsonLd, localBusinessJsonLd } from "@/components/Seo";
 import { services, locations } from "@/data/content";
 import { getServiceDetail } from "@/data/serviceDetails";
+import {
+  buildCityServicePath,
+  orderedCitySlugs,
+} from "@/lib/cityServiceUrls";
 
-const ServicePage = () => {
-  const { slug } = useParams();
-  const detail = getServiceDetail(slug);
-  const service = !detail ? services.find((s) => s.slug === slug) : null;
-  const location = !detail && !service ? locations.find((l) => l.slug === slug) : null;
+type Props = {
+  /** Optional override — used by clean URL wrappers (e.g. /kitchen-remodel-carlsbad). */
+  forcedServiceSlug?: string;
+  forcedCitySlug?: string;
+};
+
+const ServicePage = ({ forcedServiceSlug, forcedCitySlug }: Props = {}) => {
+  const params = useParams();
+  const serviceSlug = forcedServiceSlug ?? params.slug;
+  const citySlug = forcedCitySlug ?? params.city;
+
+  const detail = getServiceDetail(serviceSlug);
+  const service = !detail ? services.find((s) => s.slug === serviceSlug) : null;
+  const location =
+    !detail && !service ? locations.find((l) => l.slug === serviceSlug) : null;
+  const cityCtx = citySlug ? locations.find((l) => l.slug === citySlug) : null;
 
   if (!detail && !service && !location) return <Navigate to="/" replace />;
+  // If a city slug was passed but doesn't match, drop the city context gracefully.
+
+  const orderedCities = orderedCitySlugs()
+    .map((s) => locations.find((l) => l.slug === s))
+    .filter((l): l is NonNullable<typeof l> => Boolean(l));
 
   // ---------- Rich service detail page ----------
   if (detail) {
+    const inCity = cityCtx ? ` in ${cityCtx.name}` : "";
+    const pagePath = cityCtx
+      ? buildCityServicePath(detail.slug, cityCtx.slug)
+      : `/services/${detail.slug}`;
+    const pageTitle = cityCtx
+      ? `${detail.title} in ${cityCtx.name}, CA | Prime Projects`
+      : `${detail.title} in San Diego County | Prime Projects`;
+    const pageDescription = cityCtx
+      ? `${detail.title} for ${cityCtx.name} homeowners. ${detail.metaDescription}`
+      : detail.metaDescription;
+
     const serviceJsonLd = {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: detail.title,
-      description: detail.metaDescription,
+      name: cityCtx ? `${detail.title} in ${cityCtx.name}` : detail.title,
+      description: pageDescription,
       provider: {
         "@type": "LocalBusiness",
         name: "Prime Projects",
         telephone: "(619) 000-0000",
-        areaServed: "San Diego County, CA",
+        areaServed: cityCtx ? `${cityCtx.name}, CA` : "San Diego County, CA",
       },
-      areaServed: "San Diego County, CA",
+      areaServed: cityCtx ? `${cityCtx.name}, CA` : "San Diego County, CA",
       serviceType: detail.title,
-      url: `https://primeprojects.pro/services/${detail.slug}`,
+      url: `https://primeprojects.pro${pagePath}`,
     };
-    const breadcrumb = breadcrumbJsonLd([
-      { name: "Home", path: "/" },
-      { name: "Services", path: "/#services" },
-      { name: detail.title, path: `/services/${detail.slug}` },
-    ]);
+    const breadcrumb = breadcrumbJsonLd(
+      cityCtx
+        ? [
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/#services" },
+            { name: detail.title, path: `/services/${detail.slug}` },
+            { name: cityCtx.name, path: pagePath },
+          ]
+        : [
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/#services" },
+            { name: detail.title, path: pagePath },
+          ],
+    );
+
+    const h1 = cityCtx ? `${detail.title} in ${cityCtx.name}` : detail.h1;
+    const intro = cityCtx
+      ? `${detail.intro} Serving ${cityCtx.name} homeowners with the same concierge oversight we bring to every project across San Diego County. ${cityCtx.whyLocal}`
+      : detail.intro;
 
     return (
       <>
         <Seo
-          title={`${detail.title} in San Diego County | Prime Projects`}
-          description={detail.metaDescription}
-          path={`/services/${detail.slug}`}
+          title={pageTitle}
+          description={pageDescription}
+          path={pagePath}
           image={detail.heroImg}
           jsonLd={[serviceJsonLd, breadcrumb]}
         />
         <SubPageLayout
-          eyebrow="Service"
-          title={detail.h1}
-          intro={detail.intro}
+          eyebrow={cityCtx ? `Service · ${cityCtx.name}` : "Service"}
+          title={h1}
+          intro={intro}
           heroImg={detail.heroImg}
           heroAlt={detail.heroAlt}
         >
           {/* Trust strip */}
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8">
-            Licensed, bonded &amp; insured · Serving San Diego North County · Free consultations
+            Licensed, bonded &amp; insured ·{" "}
+            {cityCtx
+              ? `Serving ${cityCtx.name} & surrounding North County`
+              : "Serving San Diego North County"}{" "}
+            · Free consultations
           </p>
 
           {/* Long-form body */}
@@ -81,10 +130,10 @@ const ServicePage = () => {
             </ul>
           </section>
 
-          {/* Common Mistakes */}
+          {/* Common Mistakes / Why Choose Us framing */}
           <section className="mb-16">
             <h2 className="font-serif text-3xl text-charcoal mb-6">
-              Common Mistakes Homeowners Make
+              Why Homeowners Choose Prime Projects
             </h2>
             <div className="space-y-5">
               {detail.mistakes.map((m, i) => (
@@ -109,7 +158,9 @@ const ServicePage = () => {
               "Prime Projects gave us a level of clarity we never had with previous contractors —
               honest scope, real timelines, and someone who actually picked up the phone."
             </blockquote>
-            <p className="text-sm text-muted-foreground mt-4">— Homeowner, North County San Diego</p>
+            <p className="text-sm text-muted-foreground mt-4">
+              — Homeowner, {cityCtx ? cityCtx.name : "North County San Diego"}
+            </p>
           </section>
 
           {/* How Prime Projects Guides You */}
@@ -118,7 +169,7 @@ const ServicePage = () => {
               The Prime Projects Approach
             </p>
             <h2 className="font-serif text-3xl text-charcoal mb-4">
-              How Prime Projects Guides You
+              How Prime Projects Guides You{inCity}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">{detail.guidance}</p>
           </section>
@@ -147,10 +198,39 @@ const ServicePage = () => {
             </div>
           </section>
 
+          {/* Locations Served */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl text-charcoal mb-2">Locations Served</h2>
+            <p className="text-muted-foreground mb-6">
+              {detail.title} for homeowners across San Diego County. Tap a city for area-specific
+              planning notes.
+            </p>
+            <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {orderedCities.map((l) => {
+                const isCurrent = cityCtx?.slug === l.slug;
+                return (
+                  <li key={l.slug}>
+                    <Link
+                      to={buildCityServicePath(detail.slug, l.slug)}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={`block rounded-full border px-4 py-2 text-sm text-center transition-colors ${
+                        isCurrent
+                          ? "bg-olive text-primary-foreground border-olive"
+                          : "border-border text-charcoal hover:border-olive hover:text-olive"
+                      }`}
+                    >
+                      {detail.title} in {l.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
           {/* Final CTA */}
           <div className="bg-near-black text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
             <h3 className="font-serif text-2xl md:text-3xl mb-3">
-              Get Your Free {detail.title} Consultation
+              Get Your Free {detail.title} Consultation{inCity}
             </h3>
             <p className="text-primary-foreground/85 mb-6 max-w-xl mx-auto">
               Talk through goals, scope, and realistic budget — no obligation, no sales pressure.
@@ -233,19 +313,25 @@ const ServicePage = () => {
                 Home services offered in {location.name}
               </h2>
               <ul className="space-y-3">
-                {services.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      to={`/services/${s.slug}`}
-                      className="flex gap-3 text-muted-foreground hover:text-olive transition-colors"
-                    >
-                      <span className="text-brass">→</span>
-                      <span>
-                        {s.title} in {location.name}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
+                {services.map((s) => {
+                  const hasDetail = Boolean(getServiceDetail(s.slug));
+                  const to = hasDetail
+                    ? buildCityServicePath(s.slug, location.slug)
+                    : `/services/${s.slug}`;
+                  return (
+                    <li key={s.slug}>
+                      <Link
+                        to={to}
+                        className="flex gap-3 text-muted-foreground hover:text-olive transition-colors"
+                      >
+                        <span className="text-brass">→</span>
+                        <span>
+                          {s.title} in {location.name}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -338,6 +424,27 @@ const ServicePage = () => {
             </ol>
           </div>
         </div>
+
+        {/* Locations Served */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-medium text-charcoal mb-2">Locations Served</h2>
+          <p className="text-muted-foreground mb-6">
+            {s.title} across San Diego County.
+          </p>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {orderedCities.map((l) => (
+              <li key={l.slug}>
+                <Link
+                  to={`/locations/${l.slug}`}
+                  className="block rounded-full border border-border px-4 py-2 text-sm text-center text-charcoal hover:border-olive hover:text-olive transition-colors"
+                >
+                  {s.title} in {l.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <div className="mt-12 flex flex-wrap gap-4">
           <Link
             to="/#intake"
