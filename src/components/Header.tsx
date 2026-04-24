@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logoMark from "@/assets/logo-pp-mark-96.png";
-import logoMark2x from "@/assets/logo-pp-mark-192.png";
+import logoMark from "@/assets/logo-pp-mark-header@1x.png";
+import logoMark2x from "@/assets/logo-pp-mark-header@2x.png";
 
 const LogoFallback = ({ className }: { className?: string }) => (
   <span
@@ -85,7 +85,8 @@ const Header = () => {
           : "bg-gradient-to-b from-near-black/45 via-near-black/20 to-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-6">
+        {/* LEFT — logo + wordmark */}
         <Link
           to="/"
           className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
@@ -99,11 +100,11 @@ const Header = () => {
               srcSet={`${logoMark} 1x, ${logoMark2x} 2x`}
               alt="Prime Projects"
               width={96}
-              height={46}
+              height={96}
               decoding="async"
               fetchPriority="high"
               onError={() => setLogoFailed(true)}
-              className={`h-8 md:h-10 w-auto shrink-0 transition-all ${
+              className={`h-9 md:h-11 w-auto shrink-0 transition-all ${
                 overImage ? "drop-shadow-md" : ""
               }`}
             />
@@ -119,13 +120,14 @@ const Header = () => {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6">
+        {/* CENTER — nav links, evenly spaced, never interrupted */}
+        <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-7">
           {navLinks.map((link) =>
             link.type === "route" ? (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm transition-colors ${navLinkColor}`}
+                className={`text-sm whitespace-nowrap transition-colors ${navLinkColor}`}
               >
                 {link.label}
               </Link>
@@ -134,7 +136,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchor(e, link.href)}
-                className={`text-sm transition-colors ${navLinkColor}`}
+                className={`text-sm whitespace-nowrap transition-colors ${navLinkColor}`}
               >
                 {link.label}
               </a>
@@ -142,17 +144,33 @@ const Header = () => {
           )}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <a href="tel:6190000000" className={`hidden md:block text-sm transition-colors ${phoneColor}`}>
-            (619) 000-0000
-          </a>
+        {/* RIGHT — phone stacked above CTA, plus mobile burger */}
+        <div className="flex items-center gap-3 justify-end">
+          <div className="hidden md:flex flex-col items-end gap-1.5 leading-none">
+            <a
+              href="tel:6190000000"
+              className={`text-xs lg:text-sm whitespace-nowrap transition-colors ${phoneColor}`}
+            >
+              (619) 000-0000
+            </a>
+            <a
+              href="/#intake"
+              onClick={(e) => handleAnchor(e, "/#intake")}
+              className="inline-flex bg-olive text-primary-foreground rounded-full px-5 py-2 text-sm font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap"
+            >
+              Schedule a Consultation
+            </a>
+          </div>
+
+          {/* Mobile-only CTA (no room to stack) */}
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="hidden sm:inline-flex bg-olive text-primary-foreground rounded-full px-5 py-2 text-sm font-medium hover:bg-olive-dark transition-all shadow-sm"
+            className="md:hidden inline-flex bg-olive text-primary-foreground rounded-full px-4 py-2 text-xs font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap"
           >
-            Schedule a Consultation
+            Schedule
           </a>
+
           <button
             className="lg:hidden flex flex-col gap-1.5"
             onClick={() => setMobileOpen(true)}
