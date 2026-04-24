@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ServicePage from "./pages/ServicePage.tsx";
+import CityServicePage from "./pages/CityServicePage.tsx";
 import LocationPage from "./pages/LocationPage.tsx";
 import LocationsIndex from "./pages/LocationsIndex.tsx";
 import PlanningPage from "./pages/PlanningPage.tsx";
@@ -31,6 +32,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/services/:slug/:city" element={<ServicePage />} />
+          {/* Clean geo URLs e.g. /kitchen-remodel-rancho-santa-fe */}
+          <Route path="/:combined" element={<CityServicePage />} />
           <Route path="/locations" element={<LocationsIndex />} />
           <Route path="/locations/:slug" element={<LocationPage />} />
           <Route path="/planning/:slug" element={<PlanningPage />} />
