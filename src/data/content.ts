@@ -248,14 +248,6 @@ export type Location = {
 
 export const locations: Location[] = [
   {
-    slug: "san-diego-county",
-    name: "San Diego County",
-    desc: "Full county service area overview",
-    intro: "Prime Projects serves homeowners throughout San Diego County with a focus on premium residential remodeling and additions.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
-    whyLocal: "We know the permitting nuances, climate considerations, and neighborhood character across San Diego County and tailor every project accordingly.",
-  },
-  {
     slug: "oceanside",
     name: "Oceanside",
     desc: "North County coastal projects",
@@ -280,6 +272,30 @@ export const locations: Location[] = [
     whyLocal: "Encinitas homes reward thoughtful indoor-outdoor planning. We design for natural light, breeze, and easy flow to the yard.",
   },
   {
+    slug: "rancho-santa-fe",
+    name: "Rancho Santa Fe",
+    desc: "Estate and premium property work",
+    intro: "Estate-level Rancho Santa Fe projects benefit from senior project oversight and high-end trade partners.",
+    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80",
+    whyLocal: "Rancho Santa Fe estates require discreet scheduling, senior trades, and the kind of detail-level oversight Prime Projects is built for.",
+  },
+  {
+    slug: "del-mar",
+    name: "Del Mar",
+    desc: "Luxury coastal home projects",
+    intro: "Luxury Del Mar properties demand refined materials, careful coordination, and discreet execution.",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+    whyLocal: "Del Mar projects deserve a quiet, organized job site and senior-level oversight from start to finish.",
+  },
+  {
+    slug: "san-diego-county",
+    name: "San Diego County",
+    desc: "Full county service area overview",
+    intro: "Prime Projects serves homeowners throughout San Diego County with a focus on premium residential remodeling and additions.",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
+    whyLocal: "We know the permitting nuances, climate considerations, and neighborhood character across San Diego County and tailor every project accordingly.",
+  },
+  {
     slug: "san-marcos",
     name: "San Marcos",
     desc: "Growing community project support",
@@ -294,22 +310,6 @@ export const locations: Location[] = [
     intro: "Vista homes are well suited to whole-home upgrades, additions, and outdoor living transformations.",
     img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
     whyLocal: "Vista's larger lots and varied terrain open up real possibilities for additions, ADUs, and outdoor living investments.",
-  },
-  {
-    slug: "del-mar",
-    name: "Del Mar",
-    desc: "Luxury coastal home projects",
-    intro: "Luxury Del Mar properties demand refined materials, careful coordination, and discreet execution.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
-    whyLocal: "Del Mar projects deserve a quiet, organized job site and senior-level oversight from start to finish.",
-  },
-  {
-    slug: "rancho-santa-fe",
-    name: "Rancho Santa Fe",
-    desc: "Estate and premium property work",
-    intro: "Estate-level Rancho Santa Fe projects benefit from senior project oversight and high-end trade partners.",
-    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80",
-    whyLocal: "Rancho Santa Fe estates require discreet scheduling, senior trades, and the kind of detail-level oversight Prime Projects is built for.",
   },
 ];
 
