@@ -55,11 +55,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+        scrolled
+          ? "bg-card/95 backdrop-blur-xl border-border shadow-[0_12px_36px_-20px_hsl(var(--foreground)/0.35)]"
+          : "bg-card/82 backdrop-blur-lg border-border/60"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div
+        className={`max-w-6xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${
+          scrolled ? "py-3.5" : "py-4.5"
+        }`}
+      >
         <Link to="/" className="flex items-baseline" aria-label="PrimeProjects.Pro — home">
           <span className="font-serif text-[22px] text-charcoal">PrimeProjects</span>
           <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
