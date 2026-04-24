@@ -9,7 +9,7 @@ const LogoFallback = ({ className }: { className?: string }) => (
     style={{ aspectRatio: "1 / 1" }}
     aria-label="Prime Projects"
   >
-    PP
+    ​
   </span>
 );
 
