@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import FinalCta from "./FinalCta";
-import watermarkMark from "@/assets/logo-pp-mark-header@2x.png";
+
 
 type Props = {
   eyebrow?: string;
