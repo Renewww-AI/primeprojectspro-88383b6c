@@ -63,7 +63,7 @@ const Header = () => {
     >
       <div
         className={`max-w-6xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${
-          scrolled ? "py-3.5" : "py-4.5"
+          scrolled ? "py-3.5" : "py-[18px]"
         }`}
       >
         <Link to="/" className="flex items-baseline" aria-label="PrimeProjects.Pro — home">
