@@ -31,15 +31,6 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
             />
             <div className="absolute inset-0 bg-gradient-to-b from-near-black/70 via-near-black/55 to-near-black/75" />
           </div>
-          {/* Screened-back logo watermark — large, partially cut off */}
-          <img
-            src={watermarkMark}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            className="pointer-events-none select-none absolute -right-24 md:-right-40 lg:-right-56 top-1/2 -translate-y-1/2 w-[520px] md:w-[720px] lg:w-[880px] h-auto opacity-[0.22]"
-          />
           <div className="relative max-w-4xl mx-auto">
             <Link
               to="/"
