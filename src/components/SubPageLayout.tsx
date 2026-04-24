@@ -38,7 +38,7 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
             aria-hidden="true"
             loading="lazy"
             decoding="async"
-            className="pointer-events-none select-none absolute -right-24 md:-right-40 lg:-right-56 top-1/2 -translate-y-1/2 w-[520px] md:w-[720px] lg:w-[880px] h-auto opacity-[0.10]"
+            className="pointer-events-none select-none absolute -right-24 md:-right-40 lg:-right-56 top-1/2 -translate-y-1/2 w-[520px] md:w-[720px] lg:w-[880px] h-auto opacity-[0.22]"
           />
           <div className="relative max-w-4xl mx-auto">
             <Link
@@ -69,7 +69,7 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
             aria-hidden="true"
             loading="lazy"
             decoding="async"
-            className="pointer-events-none select-none absolute -right-20 md:-right-32 lg:-right-48 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] lg:w-[760px] h-auto opacity-[0.08]"
+            className="pointer-events-none select-none absolute -right-20 md:-right-32 lg:-right-48 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] lg:w-[760px] h-auto opacity-[0.18]"
           />
           <div className="relative max-w-4xl mx-auto">
             <Link to="/" className="text-sm text-olive hover:underline mb-6 inline-block">
