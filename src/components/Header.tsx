@@ -123,11 +123,11 @@ const Header = () => {
             />
           )}
           <span className="flex items-baseline whitespace-nowrap leading-none">
-            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className={`font-serif text-[14px] sm:text-[16px] md:text-[20px] transition-colors ${wordmarkColor}`}>
               PrimeProjects
             </span>
-            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-olive rounded-sm mx-1" />
-            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className="inline-block w-1 h-1 md:w-1.5 md:h-1.5 bg-olive rounded-sm mx-0.5 md:mx-1" />
+            <span className={`font-serif text-[14px] sm:text-[16px] md:text-[20px] transition-colors ${wordmarkColor}`}>
               Pro
             </span>
           </span>
