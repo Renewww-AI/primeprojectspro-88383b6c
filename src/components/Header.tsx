@@ -122,7 +122,7 @@ const Header = () => {
               }`}
             />
           )}
-          <span className="hidden sm:flex items-baseline whitespace-nowrap leading-none">
+          <span className="flex items-baseline whitespace-nowrap leading-none">
             <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               PrimeProjects
             </span>
