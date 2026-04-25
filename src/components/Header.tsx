@@ -185,11 +185,18 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-card flex flex-col items-center justify-center gap-6">
+        <div
+          className="fixed inset-0 z-50 bg-card flex flex-col items-center justify-center gap-5 overflow-y-auto"
+          style={{
+            paddingTop: "calc(env(safe-area-inset-top) + 1.25rem)",
+            paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)",
+          }}
+        >
           <button
-            className="absolute top-5 right-6 text-3xl text-charcoal"
+            className="absolute top-4 right-4 text-3xl text-charcoal w-12 h-12 flex items-center justify-center"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
+            style={{ top: "calc(env(safe-area-inset-top) + 0.5rem)" }}
           >
             ✕
           </button>
