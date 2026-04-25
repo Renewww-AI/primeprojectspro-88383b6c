@@ -206,7 +206,7 @@ const Header = () => {
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg text-charcoal hover:text-olive transition-colors"
+                className="text-lg text-charcoal hover:text-olive transition-colors py-2 px-4 min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -215,17 +215,17 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchor(e, link.href)}
-                className="text-lg text-charcoal hover:text-olive transition-colors"
+                className="text-lg text-charcoal hover:text-olive transition-colors py-2 px-4 min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>
             )
           )}
-          <a href="tel:6190000000" className="text-brass text-sm mt-4">(619) 000-0000</a>
+          <a href="tel:6190000000" className="text-brass text-base mt-4 py-2 px-4 min-h-[44px] flex items-center">(619) 000-0000</a>
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="bg-olive text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-olive-dark transition-all"
+            className="bg-olive text-primary-foreground rounded-full px-8 py-3.5 text-sm font-medium hover:bg-olive-dark transition-all min-h-[48px] flex items-center"
           >
             Schedule a Consultation
           </a>
