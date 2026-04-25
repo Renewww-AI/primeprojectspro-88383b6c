@@ -74,7 +74,7 @@ const linkClass =
 
 const Footer = () => {
   return (
-    <footer className="relative bg-near-black py-16 px-4 md:px-6 overflow-hidden opacity-90">
+    <footer className="relative bg-near-black py-12 md:py-16 px-5 md:px-6 overflow-hidden opacity-90 safe-pb">
       {/* Subtle screened-back logo watermark — large, bleeding off the right edge */}
       <img
         src={logoMark}
@@ -85,9 +85,9 @@ const Footer = () => {
         className="pointer-events-none select-none absolute -right-32 md:-right-48 lg:-right-64 top-1/2 -translate-y-1/2 w-[640px] md:w-[820px] lg:w-[960px] h-auto opacity-[0.08]"
       />
 
-      <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="relative max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
         {/* Column 1 — Company info (spans 2 on lg) */}
-        <div className="lg:col-span-2">
+        <div className="col-span-2 lg:col-span-2">
           <span className="inline-flex items-baseline whitespace-nowrap leading-none">
             <span className="font-serif text-[20px] md:text-[22px] text-primary-foreground">
               PrimeProjects
