@@ -79,13 +79,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-pl safe-pr ${
         scrolled
           ? "bg-card/95 backdrop-blur-sm shadow-sm"
           : "bg-gradient-to-b from-near-black/45 via-near-black/20 to-transparent"
       }`}
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-6">
         {/* LEFT — logo + wordmark */}
         <Link
           to="/"
@@ -93,7 +94,7 @@ const Header = () => {
           aria-label="Prime Projects — home"
         >
           {logoFailed ? (
-            <LogoFallback className={`h-8 md:h-10 ${overImage ? "drop-shadow-md" : ""}`} />
+            <LogoFallback className={`h-10 sm:h-10 md:h-11 ${overImage ? "drop-shadow-md" : ""}`} />
           ) : (
             <img
               src={logoMark}
@@ -104,17 +105,17 @@ const Header = () => {
               decoding="async"
               fetchPriority="high"
               onError={() => setLogoFailed(true)}
-              className={`h-9 md:h-11 w-auto shrink-0 transition-all ${
+              className={`h-10 sm:h-10 md:h-11 w-auto shrink-0 transition-all ${
                 overImage ? "drop-shadow-md" : ""
               }`}
             />
           )}
           <span className="hidden sm:flex items-baseline whitespace-nowrap leading-none">
-            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               PrimeProjects
             </span>
-            <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
-            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-olive rounded-sm mx-1" />
+            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               Pro
             </span>
           </span>
@@ -166,13 +167,13 @@ const Header = () => {
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="md:hidden inline-flex bg-olive text-primary-foreground rounded-full px-4 py-2 text-xs font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap"
+            className="md:hidden inline-flex items-center bg-olive text-primary-foreground rounded-full px-4 py-2.5 text-xs font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap min-h-[40px]"
           >
             Schedule
           </a>
 
           <button
-            className="lg:hidden flex flex-col gap-1.5"
+            className="lg:hidden flex flex-col gap-1.5 p-2 -mr-2 min-h-[44px] min-w-[44px] items-center justify-center"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
