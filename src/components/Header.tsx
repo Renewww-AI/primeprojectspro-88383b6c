@@ -38,6 +38,17 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [mobileOpen]);
+
   // Smart anchor handler — works from any page
   const handleAnchor = (e: React.MouseEvent, href: string) => {
     if (!href.startsWith("/#")) return;
@@ -79,13 +90,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-pl safe-pr ${
         scrolled
           ? "bg-card/95 backdrop-blur-sm shadow-sm"
           : "bg-gradient-to-b from-near-black/45 via-near-black/20 to-transparent"
       }`}
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-6">
         {/* LEFT — logo + wordmark */}
         <Link
           to="/"
@@ -93,7 +105,7 @@ const Header = () => {
           aria-label="Prime Projects — home"
         >
           {logoFailed ? (
-            <LogoFallback className={`h-8 md:h-10 ${overImage ? "drop-shadow-md" : ""}`} />
+            <LogoFallback className={`h-10 sm:h-10 md:h-11 ${overImage ? "drop-shadow-md" : ""}`} />
           ) : (
             <img
               src={logoMark}
@@ -104,17 +116,17 @@ const Header = () => {
               decoding="async"
               fetchPriority="high"
               onError={() => setLogoFailed(true)}
-              className={`h-9 md:h-11 w-auto shrink-0 transition-all ${
+              className={`h-10 sm:h-10 md:h-11 w-auto shrink-0 transition-all ${
                 overImage ? "drop-shadow-md" : ""
               }`}
             />
           )}
           <span className="hidden sm:flex items-baseline whitespace-nowrap leading-none">
-            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               PrimeProjects
             </span>
-            <span className="inline-block w-2 h-2 bg-olive rounded-sm mx-1" />
-            <span className={`font-serif text-[20px] md:text-[22px] transition-colors ${wordmarkColor}`}>
+            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-olive rounded-sm mx-1" />
+            <span className={`font-serif text-[18px] md:text-[22px] transition-colors ${wordmarkColor}`}>
               Pro
             </span>
           </span>
@@ -166,13 +178,13 @@ const Header = () => {
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="md:hidden inline-flex bg-olive text-primary-foreground rounded-full px-4 py-2 text-xs font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap"
+            className="md:hidden inline-flex items-center bg-olive text-primary-foreground rounded-full px-4 py-2.5 text-xs font-medium hover:bg-olive-dark transition-all shadow-sm whitespace-nowrap min-h-[40px]"
           >
             Schedule
           </a>
 
           <button
-            className="lg:hidden flex flex-col gap-1.5"
+            className="lg:hidden flex flex-col gap-1.5 p-2 -mr-2 min-h-[44px] min-w-[44px] items-center justify-center"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -184,11 +196,18 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-card flex flex-col items-center justify-center gap-6">
+        <div
+          className="fixed inset-0 z-50 bg-card flex flex-col items-center justify-center gap-5 overflow-y-auto"
+          style={{
+            paddingTop: "calc(env(safe-area-inset-top) + 1.25rem)",
+            paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)",
+          }}
+        >
           <button
-            className="absolute top-5 right-6 text-3xl text-charcoal"
+            className="absolute top-4 right-4 text-3xl text-charcoal w-12 h-12 flex items-center justify-center"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
+            style={{ top: "calc(env(safe-area-inset-top) + 0.5rem)" }}
           >
             ✕
           </button>
@@ -198,7 +217,7 @@ const Header = () => {
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg text-charcoal hover:text-olive transition-colors"
+                className="text-lg text-charcoal hover:text-olive transition-colors py-2 px-4 min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -207,17 +226,17 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchor(e, link.href)}
-                className="text-lg text-charcoal hover:text-olive transition-colors"
+                className="text-lg text-charcoal hover:text-olive transition-colors py-2 px-4 min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>
             )
           )}
-          <a href="tel:6190000000" className="text-brass text-sm mt-4">(619) 000-0000</a>
+          <a href="tel:6190000000" className="text-brass text-base mt-4 py-2 px-4 min-h-[44px] flex items-center">(619) 000-0000</a>
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}
-            className="bg-olive text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-olive-dark transition-all"
+            className="bg-olive text-primary-foreground rounded-full px-8 py-3.5 text-sm font-medium hover:bg-olive-dark transition-all min-h-[48px] flex items-center"
           >
             Schedule a Consultation
           </a>

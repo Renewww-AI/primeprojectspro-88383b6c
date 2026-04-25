@@ -1,11 +1,14 @@
 const IntakeForm = () => {
+  const inputClass =
+    "w-full border border-border rounded-xl px-4 py-3 text-base sm:text-sm focus:outline-none focus:border-olive focus:ring-2 focus:ring-olive/20 bg-stone-bg min-h-[48px]";
+
   return (
-    <section id="intake" className="relative z-10 -mt-8 mb-0 px-4">
-      <div className="bg-card rounded-3xl shadow-xl border border-border p-6 md:p-8 max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8">
+    <section id="intake" className="relative z-10 -mt-8 mb-0 px-4 scroll-mt-24">
+      <div className="bg-card rounded-3xl shadow-xl border border-border p-5 sm:p-6 md:p-8 max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           <div className="lg:w-[40%]">
             <p className="text-xs uppercase tracking-widest text-brass mb-3">Start your project plan</p>
-            <h2 className="text-2xl font-medium text-charcoal mb-4">
+            <h2 className="text-xl sm:text-2xl font-medium text-charcoal mb-3 sm:mb-4">
               Tell us what you're considering.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -13,8 +16,11 @@ const IntakeForm = () => {
               the next steps, likely scope, and the right path forward.
             </p>
           </div>
-          <form className="lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={(e) => e.preventDefault()}>
-            <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg">
+          <form
+            className="lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <select className={inputClass} aria-label="Project Type">
               <option value="">Project Type</option>
               <option>ADU</option>
               <option>Kitchen Remodel</option>
@@ -25,7 +31,7 @@ const IntakeForm = () => {
               <option>Whole-Home Planning</option>
               <option>Other</option>
             </select>
-            <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg">
+            <select className={inputClass} aria-label="City">
               <option value="">City</option>
               <option>San Diego</option>
               <option>Oceanside</option>
@@ -37,7 +43,7 @@ const IntakeForm = () => {
               <option>Rancho Santa Fe</option>
               <option>Other</option>
             </select>
-            <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg">
+            <select className={inputClass} aria-label="Target Timeline">
               <option value="">Target Timeline</option>
               <option>ASAP</option>
               <option>1–3 months</option>
@@ -45,7 +51,7 @@ const IntakeForm = () => {
               <option>6–12 months</option>
               <option>Just exploring</option>
             </select>
-            <select className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg">
+            <select className={inputClass} aria-label="Budget Range">
               <option value="">Budget Range</option>
               <option>Under $25K</option>
               <option>$25K–$75K</option>
@@ -56,22 +62,30 @@ const IntakeForm = () => {
             </select>
             <input
               type="text"
+              autoComplete="name"
               placeholder="Your Name"
-              className="md:col-span-2 w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg"
+              aria-label="Your Name"
+              className={`${inputClass} md:col-span-2`}
             />
             <input
               type="tel"
+              autoComplete="tel"
+              inputMode="tel"
               placeholder="Phone Number"
-              className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg"
+              aria-label="Phone Number"
+              className={inputClass}
             />
             <input
               type="email"
+              autoComplete="email"
+              inputMode="email"
               placeholder="Email Address"
-              className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-olive bg-stone-bg"
+              aria-label="Email Address"
+              className={inputClass}
             />
             <button
               type="submit"
-              className="md:col-span-2 w-full bg-olive text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-olive-dark transition-all"
+              className="md:col-span-2 w-full bg-olive text-primary-foreground rounded-full px-8 py-3.5 text-sm font-medium hover:bg-olive-dark transition-all min-h-[48px]"
             >
               Request My Consultation
             </button>

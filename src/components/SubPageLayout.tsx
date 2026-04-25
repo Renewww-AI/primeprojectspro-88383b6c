@@ -20,7 +20,7 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
       <Header />
 
       {heroImg ? (
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 md:px-6 overflow-hidden">
+        <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 px-4 md:px-6 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroImg}
@@ -28,47 +28,50 @@ const SubPageLayout = ({ eyebrow, title, intro, heroImg, heroAlt, children }: Pr
               className="w-full h-full object-cover"
               width={1600}
               height={900}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-near-black/70 via-near-black/55 to-near-black/75" />
           </div>
           <div className="relative max-w-4xl mx-auto">
             <Link
               to="/"
-              className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline mb-6 inline-block"
+              className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline mb-5 sm:mb-6 inline-block py-1"
             >
               ← Back to home
             </Link>
             {eyebrow && (
-              <p className="text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-4">{eyebrow}</p>
+              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-[hsl(36_45%_65%)] mb-3 sm:mb-4">{eyebrow}</p>
             )}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 leading-tight drop-shadow-sm">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-5 sm:mb-6 leading-tight drop-shadow-sm">
               {title}
             </h1>
             {intro && (
-              <p className="text-lg text-primary-foreground/95 leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg text-primary-foreground/95 leading-relaxed max-w-2xl">
                 {intro}
               </p>
             )}
           </div>
         </section>
       ) : (
-        <section className="relative pt-32 pb-12 px-4 md:px-6 bg-card overflow-hidden">
+        <section className="relative pt-28 sm:pt-32 pb-10 sm:pb-12 px-4 md:px-6 bg-card overflow-hidden">
           <div className="relative max-w-4xl mx-auto">
-            <Link to="/" className="text-sm text-olive hover:underline mb-6 inline-block">
+            <Link to="/" className="text-sm text-olive hover:underline mb-5 sm:mb-6 inline-block py-1">
               ← Back to home
             </Link>
             {eyebrow && (
-              <p className="text-xs uppercase tracking-widest text-brass mb-4">{eyebrow}</p>
+              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-brass mb-3 sm:mb-4">{eyebrow}</p>
             )}
-            <h1 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">{title}</h1>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal mb-5 sm:mb-6">{title}</h1>
             {intro && (
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{intro}</p>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">{intro}</p>
             )}
           </div>
         </section>
       )}
 
-      <section className="py-16 px-4 md:px-6">
+      <section className="py-12 sm:py-16 px-4 md:px-6">
         <div className="max-w-4xl mx-auto">{children}</div>
       </section>
       <FinalCta />

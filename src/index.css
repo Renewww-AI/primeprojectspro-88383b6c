@@ -40,12 +40,31 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply text-charcoal;
+    text-wrap: balance;
   }
+  /* Ensure tap targets meet 44px minimum on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    a, button, [role="button"], input, select, textarea {
+      touch-action: manipulation;
+    }
+  }
+  /* Respect iOS safe areas */
+  .safe-pt { padding-top: env(safe-area-inset-top); }
+  .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+  .safe-pl { padding-left: env(safe-area-inset-left); }
+  .safe-pr { padding-right: env(safe-area-inset-right); }
 }
 
 @layer components {
