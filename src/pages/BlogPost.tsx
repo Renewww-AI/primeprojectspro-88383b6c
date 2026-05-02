@@ -113,8 +113,8 @@ const BlogPost = () => {
               <Link to="/#intake" className="bg-primary-foreground text-near-black rounded-full px-6 py-3 text-sm font-medium hover:opacity-90 transition-all">
                 Get a Free Consultation
               </Link>
-              <a href="tel:6190000000" className="border border-primary-foreground/40 text-primary-foreground rounded-full px-6 py-3 text-sm font-medium hover:bg-primary-foreground hover:text-near-black transition-all">
-                Call (619) 000-0000
+              <a href="tel:7605255058" className="border border-primary-foreground/40 text-primary-foreground rounded-full px-6 py-3 text-sm font-medium hover:bg-primary-foreground hover:text-near-black transition-all">
+                Call (760) 525-5058
               </a>
             </div>
           </div>

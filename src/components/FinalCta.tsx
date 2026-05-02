@@ -17,7 +17,7 @@ const FinalCta = () => {
             Schedule a Consultation
           </a>
           <a
-            href="tel:6190000000"
+            href="tel:7605255058"
             className="border border-primary-foreground text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:bg-primary-foreground hover:text-charcoal transition-all"
           >
             Call Now

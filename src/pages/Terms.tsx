@@ -112,7 +112,7 @@ const Terms = () => {
           <p>
             <strong>PrimeProjects.Pro</strong><br />
             San Diego County, California<br />
-            Email: <a href="mailto:legal@primeprojects.pro" className="text-olive hover:underline">legal@primeprojects.pro</a>
+            Email: <a href="mailto:elevate@renewww.com" className="text-olive hover:underline">elevate@renewww.com</a>
           </p>
         </Section>
       </LegalLayout>

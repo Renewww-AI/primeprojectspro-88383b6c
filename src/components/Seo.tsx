@@ -57,7 +57,8 @@ export const localBusinessJsonLd = {
   "@type": "LocalBusiness",
   name: "Prime Projects",
   url: SITE,
-  telephone: "(619) 000-0000",
+  telephone: "(760) 525-5058",
+  email: "elevate@renewww.com",
   image: `${SITE}/og-image.jpg`,
   areaServed: [
     "San Diego County",

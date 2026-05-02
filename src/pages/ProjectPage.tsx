@@ -86,10 +86,10 @@ const ProjectPage = () => {
             Start a Similar Project
           </Link>
           <a
-            href="tel:6190000000"
+            href="tel:7605255058"
             className="border border-olive text-olive rounded-full px-6 py-3 text-sm font-medium hover:bg-olive hover:text-primary-foreground transition-all"
           >
-            Call (619) 000-0000
+            Call (760) 525-5058
           </a>
         </div>
       </SubPageLayout>

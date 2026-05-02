@@ -161,10 +161,10 @@ const Header = () => {
         <div className="flex items-center gap-3 justify-end">
           <div className="hidden md:flex flex-col items-end gap-1.5 leading-none">
             <a
-              href="tel:6190000000"
+              href="tel:7605255058"
               className={`text-xs lg:text-sm whitespace-nowrap transition-colors ${phoneColor}`}
             >
-              (619) 000-0000
+              (760) 525-5058
             </a>
             <a
               href="/#intake"
@@ -237,7 +237,7 @@ const Header = () => {
               </a>
             )
           )}
-          <a href="tel:6190000000" className="text-brass text-base mt-4 py-2 px-4 min-h-[44px] flex items-center">(619) 000-0000</a>
+          <a href="tel:7605255058" className="text-brass text-base mt-4 py-2 px-4 min-h-[44px] flex items-center">(760) 525-5058</a>
           <a
             href="/#intake"
             onClick={(e) => handleAnchor(e, "/#intake")}

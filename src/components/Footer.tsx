@@ -102,11 +102,17 @@ const Footer = () => {
             planning, premium service, and quality-driven project outcomes.
           </p>
           <a
-            href="tel:6190000000"
+            href="tel:7605255058"
             className="inline-flex items-center gap-2 mt-5 text-primary-foreground hover:text-brass transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span className="text-base font-medium">(619) 000-0000</span>
+            <span className="text-base font-medium">(760) 525-5058</span>
+          </a>
+          <a
+            href="mailto:elevate@renewww.com"
+            className="block mt-2 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+          >
+            elevate@renewww.com
           </a>
           <div className="mt-4">
             <a
