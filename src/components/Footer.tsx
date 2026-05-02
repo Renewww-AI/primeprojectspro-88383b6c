@@ -108,6 +108,12 @@ const Footer = () => {
             <Phone className="w-4 h-4" />
             <span className="text-base font-medium">(760) 525-5058</span>
           </a>
+          <a
+            href="mailto:elevate@renewww.com"
+            className="block mt-2 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+          >
+            elevate@renewww.com
+          </a>
           <div className="mt-4">
             <a
               href="/#intake"
