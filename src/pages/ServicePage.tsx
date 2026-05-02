@@ -53,7 +53,7 @@ const ServicePage = ({ forcedServiceSlug, forcedCitySlug }: Props = {}) => {
       provider: {
         "@type": "LocalBusiness",
         name: "Prime Projects",
-        telephone: "(619) 000-0000",
+        telephone: "(760) 525-5058",
         areaServed: cityCtx ? `${cityCtx.name}, CA` : "San Diego County, CA",
       },
       areaServed: cityCtx ? `${cityCtx.name}, CA` : "San Diego County, CA",
@@ -243,10 +243,10 @@ const ServicePage = ({ forcedServiceSlug, forcedCitySlug }: Props = {}) => {
                 Schedule a Free Consultation
               </Link>
               <a
-                href="tel:6190000000"
+                href="tel:7605255058"
                 className="border border-primary-foreground/40 text-primary-foreground rounded-full px-6 py-3 text-sm font-medium hover:bg-primary-foreground hover:text-near-black transition-all"
               >
-                Call (619) 000-0000
+                Call (760) 525-5058
               </a>
             </div>
           </div>
@@ -351,10 +351,10 @@ const ServicePage = ({ forcedServiceSlug, forcedCitySlug }: Props = {}) => {
                 Schedule a Free Consultation
               </Link>
               <a
-                href="tel:6190000000"
+                href="tel:7605255058"
                 className="border border-olive text-olive rounded-full px-6 py-3 text-sm font-medium hover:bg-olive hover:text-primary-foreground transition-all"
               >
-                Call (619) 000-0000
+                Call (760) 525-5058
               </a>
             </div>
           </div>
@@ -453,10 +453,10 @@ const ServicePage = ({ forcedServiceSlug, forcedCitySlug }: Props = {}) => {
             Get Your Free {s.title} Consultation
           </Link>
           <a
-            href="tel:6190000000"
+            href="tel:7605255058"
             className="border border-olive text-olive rounded-full px-6 py-3 text-sm font-medium hover:bg-olive hover:text-primary-foreground transition-all"
           >
-            Call (619) 000-0000
+            Call (760) 525-5058
           </a>
         </div>
       </SubPageLayout>
