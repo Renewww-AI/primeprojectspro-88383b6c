@@ -33,7 +33,7 @@ const AdminLogin = () => {
           .eq("user_id", data.session.user.id)
           .eq("role", "admin")
           .maybeSingle();
-        if (roleRow) navigate("/admin/blog-submissions", { replace: true });
+        if (roleRow) navigate("/leads", { replace: true });
       }
     });
   }, [navigate]);
@@ -68,7 +68,7 @@ const AdminLogin = () => {
       setError("This account does not have admin access.");
       return;
     }
-    navigate("/admin/blog-submissions", { replace: true });
+    navigate("/leads", { replace: true });
   };
 
   return (
