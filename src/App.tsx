@@ -17,6 +17,7 @@ import BlogPost from "./pages/BlogPost.tsx";
 import BlogSubmit from "./pages/BlogSubmit.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminSubmissions from "./pages/AdminSubmissions.tsx";
+import AdminLeads from "./pages/AdminLeads.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
 import DebugLogos from "./pages/DebugLogos.tsx";
@@ -44,7 +45,10 @@ const App = () => (
           <Route path="/blog/submit" element={<BlogSubmit />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/login" element={<AdminLogin />} />
           <Route path="/admin/blog-submissions" element={<AdminSubmissions />} />
+          <Route path="/leads" element={<AdminLeads />} />
+          <Route path="/admin/leads" element={<AdminLeads />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/debug/logos" element={<DebugLogos />} />
