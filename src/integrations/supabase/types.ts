@@ -74,6 +74,48 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          budget_range: string
+          city: string
+          created_at: string
+          email: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string
+          project_type: string
+          status: string
+          target_timeline: string
+        }
+        Insert: {
+          budget_range: string
+          city: string
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone: string
+          project_type: string
+          status?: string
+          target_timeline: string
+        }
+        Update: {
+          budget_range?: string
+          city?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string
+          project_type?: string
+          status?: string
+          target_timeline?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
