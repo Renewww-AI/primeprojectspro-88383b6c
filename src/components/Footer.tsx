@@ -109,10 +109,10 @@ const Footer = () => {
             <span className="text-base font-medium">(760) 525-5058</span>
           </a>
           <a
-            href="mailto:elevate@renewww.com"
+            href="mailto:consult@primeprojects.pro"
             className="block mt-2 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
           >
-            elevate@renewww.com
+            consult@primeprojects.pro
           </a>
           <div className="mt-4">
             <a
@@ -189,7 +189,7 @@ const Footer = () => {
       {/* Divider + bottom bar */}
       <div className="relative max-w-6xl mx-auto border-t border-primary-foreground/10 mt-12 pt-6 flex flex-wrap justify-between gap-4">
         <span className="text-xs text-primary-foreground/30">
-          © 2025 Prime Projects. All rights reserved.
+          © 2026 Prime Projects. All rights reserved.
         </span>
         <span className="text-xs text-primary-foreground/30">
           Serving San Diego County and surrounding communities

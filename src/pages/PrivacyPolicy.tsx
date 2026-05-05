@@ -100,7 +100,7 @@ const PrivacyPolicy = () => {
             <li><strong>Opt out</strong> of marketing communications at any time.</li>
             <li><strong>Object to or restrict</strong> certain processing of your information.</li>
           </ul>
-          <p>To make a request, email us at <a href="mailto:elevate@renewww.com" className="text-olive hover:underline">elevate@renewww.com</a>. We will respond within 30 days.</p>
+          <p>To make a request, email us at <a href="mailto:consult@primeprojects.pro" className="text-olive hover:underline">consult@primeprojects.pro</a>. We will respond within 30 days.</p>
           <p><strong>California Residents (CCPA/CPRA).</strong> If you are a California resident, you have additional rights under the California Consumer Privacy Act, including the right to know what categories of personal information we collect, the sources of that information, the business purposes for collection, and the categories of third parties with whom we share it. You also have the right to request deletion of your personal information, the right to correct inaccurate information, and the right to opt out of any "sale" or "sharing" of your personal information for cross-context behavioral advertising. PrimeProjects.Pro does not sell personal information. You will not be discriminated against for exercising any of these rights.</p>
         </Section>
 
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
           <p>
             <strong>PrimeProjects.Pro</strong><br />
             San Diego County, California<br />
-            Email: <a href="mailto:elevate@renewww.com" className="text-olive hover:underline">elevate@renewww.com</a>
+            Email: <a href="mailto:consult@primeprojects.pro" className="text-olive hover:underline">consult@primeprojects.pro</a>
           </p>
         </Section>
       </LegalLayout>
