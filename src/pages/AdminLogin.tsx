@@ -110,6 +110,7 @@ const AdminLogin = () => {
               className="w-full rounded-full bg-olive hover:bg-olive-dark text-primary-foreground"
             >
               {loading ? <><Loader2 className="w-4 h-4 animate-spin" /> Signing in…</> : "Sign in"}
+            </Button>
           </form>
         </div>
       </section>
