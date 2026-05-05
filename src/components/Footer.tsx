@@ -201,6 +201,10 @@ const Footer = () => {
           ·{" "}
           <Link to="/terms" className="hover:text-primary-foreground/60">
             Terms
+          </Link>{" "}
+          ·{" "}
+          <Link to="/login" className="hover:text-primary-foreground/60">
+            Admin Portal
           </Link>
         </span>
       </div>
