@@ -110,11 +110,6 @@ const AdminLogin = () => {
               className="w-full rounded-full bg-olive hover:bg-olive-dark text-primary-foreground"
             >
               {loading ? <><Loader2 className="w-4 h-4 animate-spin" /> Signing in…</> : "Sign in"}
-            </Button>
-            <p className="text-xs text-muted-foreground text-center pt-2">
-              Need an admin account? Create one in Cloud → Users, then add an "admin" role for that user in the user_roles table.{" "}
-              <Link to="/" className="text-olive hover:underline">Back home</Link>
-            </p>
           </form>
         </div>
       </section>
