@@ -135,22 +135,29 @@ Deno.serve(async (req) => {
       html,
     });
 
-    const customerPromise = resend.emails
-      .send({
-        from: customerFrom,
-        to: [body.email!],
-        reply_to: "consult@primeprojects.pro",
-        subject: customerSubject,
-        html: customerHtml,
-      })
-      .then((res) => {
-        if (res.error) console.error("Customer confirmation email failed:", res.error);
-        return res;
-      })
-      .catch((err) => {
-        console.error("Customer confirmation email threw:", err);
-        return null;
-      });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const customerEmail = typeof body.email === "string" ? body.email.trim() : "";
+    const canSendCustomer =
+      customerEmail.length > 0 && customerEmail.length <= 320 && emailRegex.test(customerEmail);
+
+    const customerPromise = canSendCustomer
+      ? resend.emails
+          .send({
+            from: customerFrom,
+            to: [customerEmail],
+            reply_to: "consult@primeprojects.pro",
+            subject: customerSubject,
+            html: customerHtml,
+          })
+          .then((res) => {
+            if (res.error) console.error("Customer confirmation email failed:", res.error);
+            return res;
+          })
+          .catch((err) => {
+            console.error("Customer confirmation email threw:", err);
+            return null;
+          })
+      : Promise.resolve(null);
 
     const [internalResult] = await Promise.all([internalPromise, customerPromise]);
     const { data, error } = internalResult;
