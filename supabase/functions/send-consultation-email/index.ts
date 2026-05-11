@@ -110,7 +110,7 @@ Deno.serve(async (req) => {
           from: "Prime Projects <onboarding@resend.dev>",
           to: ["ben.markowitz24@gmail.com"],
           reply_to: body.email!,
-          subject: `[UNVERIFIED DOMAIN] New Consultation Request – ${body.name!}`,
+          subject: `New Consultation Request – ${body.name!}`,
           html,
         });
         if (retry.error) {
