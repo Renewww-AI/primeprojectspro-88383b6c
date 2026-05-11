@@ -88,14 +88,18 @@ Deno.serve(async (req) => {
       </div>
     `;
 
+    const subject = `Prime Projects Consultation Request – ${body.name!}`;
     const fromAddress =
-      Deno.env.get("RESEND_FROM") || "Prime Projects <notifications@primeprojects.pro>";
+      Deno.env.get("RESEND_FROM") || "Prime Projects <onboarding@resend.dev>";
+    const recipients = fromAddress.includes("onboarding@resend.dev")
+      ? ["ben.markowitz24@gmail.com"]
+      : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
 
     const { data, error } = await resend.emails.send({
       from: fromAddress,
-      to: ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"],
+      to: recipients,
       reply_to: body.email!,
-      subject: `New Consultation Request – ${body.name!}`,
+      subject,
       html,
     });
 
@@ -110,7 +114,7 @@ Deno.serve(async (req) => {
           from: "Prime Projects <onboarding@resend.dev>",
           to: ["ben.markowitz24@gmail.com"],
           reply_to: body.email!,
-          subject: `New Consultation Request – ${body.name!}`,
+          subject,
           html,
         });
         if (retry.error) {
