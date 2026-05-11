@@ -38,20 +38,31 @@ const IntakeForm = () => {
     }
     setSubmitting(true);
     try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/submit-lead`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed.data),
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || !json.success) throw new Error(json.error || "Submission failed");
+      const [leadRes, emailRes] = await Promise.all([
+        fetch(`${SUPABASE_URL}/functions/v1/submit-lead`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(parsed.data),
+        }),
+        fetch(`${SUPABASE_URL}/functions/v1/send-consultation-email`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(parsed.data),
+        }),
+      ]);
+      const leadJson = await leadRes.json().catch(() => ({}));
+      const emailJson = await emailRes.json().catch(() => ({}));
+      if (!leadRes.ok || !leadJson.success) throw new Error(leadJson.error || "Submission failed");
+      if (!emailRes.ok || !emailJson.success) {
+        console.error("Email send failed:", emailJson);
+      }
       setSubmitted(true);
       setForm({ name: "", phone: "", email: "", project_type: "", city: "", target_timeline: "", budget_range: "" });
-      toast({ title: "Request received", description: "We'll follow up within 1 business day." });
+      toast({ title: "Request received", description: "We'll be in touch within 1 business day." });
     } catch (err) {
       toast({
-        title: "Couldn't submit",
-        description: err instanceof Error ? err.message : "Please try again.",
+        title: "Something went wrong",
+        description: "Please call us at (760) 525-5058.",
         variant: "destructive",
       });
     } finally {
