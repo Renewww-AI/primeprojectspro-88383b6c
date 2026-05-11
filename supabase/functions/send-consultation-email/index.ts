@@ -97,7 +97,7 @@ Deno.serve(async (req) => {
       : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
 
     // Customer confirmation email
-    const customerSubject = "We received your consultation request – Prime Projects";
+    const customerSubject = `Prime Projects Consultation Request – ${body.name!}`;
     const customerRows: Array<[string, string]> = [
       ["Project Type", body.project_type!],
       ["City", body.city!],
