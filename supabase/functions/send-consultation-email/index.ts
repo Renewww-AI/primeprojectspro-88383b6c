@@ -108,9 +108,9 @@ Deno.serve(async (req) => {
       if (isDomainErr) {
         const retry = await resend.emails.send({
           from: "Prime Projects <onboarding@resend.dev>",
-          to: ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"],
+          to: ["ben.markowitz24@gmail.com"],
           reply_to: body.email!,
-          subject: `New Consultation Request – ${body.name!}`,
+          subject: `[UNVERIFIED DOMAIN] New Consultation Request – ${body.name!}`,
           html,
         });
         if (retry.error) {
