@@ -158,7 +158,7 @@ Deno.serve(async (req) => {
           .send({
             from: customerFrom,
             to: [customerEmail],
-            reply_to: "consult@primeprojects.pro",
+            reply_to: customerReplyTo,
             subject: customerSubject,
             html: customerHtml,
           })
