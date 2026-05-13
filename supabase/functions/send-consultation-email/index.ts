@@ -92,9 +92,20 @@ Deno.serve(async (req) => {
     const fromAddress =
       Deno.env.get("RESEND_FROM") || "Prime Projects <onboarding@resend.dev>";
     const usingFallbackSender = fromAddress.includes("onboarding@resend.dev");
+    // Internal recipients: configurable via INTERNAL_RECIPIENTS (comma-separated).
+    // Falls back to safe defaults. When using Resend's shared sender, only the
+    // account owner address is deliverable, so we restrict to that.
+    const configuredRecipients = (Deno.env.get("INTERNAL_RECIPIENTS") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
     const recipients = usingFallbackSender
       ? ["ben.markowitz24@gmail.com"]
-      : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
+      : configuredRecipients.length > 0
+        ? configuredRecipients
+        : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
+    const customerReplyTo =
+      Deno.env.get("CUSTOMER_REPLY_TO") || "consult@primeprojects.pro";
 
     // Customer confirmation email
     const customerSubject = `Prime Projects Consultation Request – ${body.name!}`;
@@ -123,9 +134,11 @@ Deno.serve(async (req) => {
         <p style="margin-top:24px;">— The Prime Projects Team<br/><a href="https://primeprojects.pro" style="color:#3a3a2e;">PrimeProjects.Pro</a></p>
       </div>
     `;
-    const customerFrom = usingFallbackSender
-      ? "Prime Projects <onboarding@resend.dev>"
-      : "Prime Projects <consult@primeprojects.pro>";
+    // Customer confirmation always sends from the same verified sender as the
+    // internal email. While on the shared fallback sender, Resend will only
+    // deliver to your Resend account owner — so verify your domain in Resend
+    // and set RESEND_FROM to enable real customer delivery.
+    const customerFrom = fromAddress;
 
     const internalPromise = resend.emails.send({
       from: fromAddress,
@@ -145,7 +158,7 @@ Deno.serve(async (req) => {
           .send({
             from: customerFrom,
             to: [customerEmail],
-            reply_to: "consult@primeprojects.pro",
+            reply_to: customerReplyTo,
             subject: customerSubject,
             html: customerHtml,
           })
