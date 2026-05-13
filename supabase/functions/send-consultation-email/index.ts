@@ -134,9 +134,11 @@ Deno.serve(async (req) => {
         <p style="margin-top:24px;">— The Prime Projects Team<br/><a href="https://primeprojects.pro" style="color:#3a3a2e;">PrimeProjects.Pro</a></p>
       </div>
     `;
-    const customerFrom = usingFallbackSender
-      ? "Prime Projects <onboarding@resend.dev>"
-      : "Prime Projects <consult@primeprojects.pro>";
+    // Customer confirmation always sends from the same verified sender as the
+    // internal email. While on the shared fallback sender, Resend will only
+    // deliver to your Resend account owner — so verify your domain in Resend
+    // and set RESEND_FROM to enable real customer delivery.
+    const customerFrom = fromAddress;
 
     const internalPromise = resend.emails.send({
       from: fromAddress,
