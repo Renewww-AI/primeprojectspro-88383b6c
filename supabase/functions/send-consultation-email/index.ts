@@ -92,9 +92,20 @@ Deno.serve(async (req) => {
     const fromAddress =
       Deno.env.get("RESEND_FROM") || "Prime Projects <onboarding@resend.dev>";
     const usingFallbackSender = fromAddress.includes("onboarding@resend.dev");
+    // Internal recipients: configurable via INTERNAL_RECIPIENTS (comma-separated).
+    // Falls back to safe defaults. When using Resend's shared sender, only the
+    // account owner address is deliverable, so we restrict to that.
+    const configuredRecipients = (Deno.env.get("INTERNAL_RECIPIENTS") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
     const recipients = usingFallbackSender
       ? ["ben.markowitz24@gmail.com"]
-      : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
+      : configuredRecipients.length > 0
+        ? configuredRecipients
+        : ["consult@primeprojects.pro", "ben.markowitz24@gmail.com"];
+    const customerReplyTo =
+      Deno.env.get("CUSTOMER_REPLY_TO") || "consult@primeprojects.pro";
 
     // Customer confirmation email
     const customerSubject = `Prime Projects Consultation Request – ${body.name!}`;
