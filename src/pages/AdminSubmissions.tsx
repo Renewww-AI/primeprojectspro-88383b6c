@@ -311,7 +311,7 @@ const SubmissionPreview = ({
         </div>
         <div
           className="prose-content text-charcoal"
-          dangerouslySetInnerHTML={{ __html: row.body_html }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(row.body_html) }}
         />
         {row.author_bio && (
           <div className="mt-10 p-5 bg-secondary rounded-xl text-sm text-charcoal">
