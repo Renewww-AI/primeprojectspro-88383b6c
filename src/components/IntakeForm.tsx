@@ -38,21 +38,20 @@ const IntakeForm = () => {
     }
     setSubmitting(true);
     try {
-      const [leadRes, emailRes] = await Promise.all([
-        fetch(`${SUPABASE_URL}/functions/v1/submit-lead`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(parsed.data),
-        }),
-        fetch(`${SUPABASE_URL}/functions/v1/send-consultation-email`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(parsed.data),
-        }),
-      ]);
+      const leadRes = await fetch(`${SUPABASE_URL}/functions/v1/submit-lead`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsed.data),
+      });
       const leadJson = await leadRes.json().catch(() => ({}));
-      const emailJson = await emailRes.json().catch(() => ({}));
       if (!leadRes.ok || !leadJson.success) throw new Error(leadJson.error || "Submission failed");
+
+      const emailRes = await fetch(`${SUPABASE_URL}/functions/v1/send-consultation-email`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lead_id: leadJson.id }),
+      });
+      const emailJson = await emailRes.json().catch(() => ({}));
       if (!emailRes.ok || !emailJson.success) {
         console.error("Email send failed:", emailJson);
       }
