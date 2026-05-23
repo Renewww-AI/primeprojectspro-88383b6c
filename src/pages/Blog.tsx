@@ -42,7 +42,7 @@ const Blog = () => {
         .from("public_blog_posts" as any)
         .select("*")
         .order("published_at", { ascending: false });
-      if (data) setCommunity((data as CommunityRow[]).map(rowToBlogPost));
+      if (data) setCommunity((data as unknown as CommunityRow[]).map(rowToBlogPost));
     })();
   }, []);
 
