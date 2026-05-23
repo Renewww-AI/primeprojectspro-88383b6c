@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { CommunityRow } from "@/lib/community";
+import { sanitizeHtml } from "@/lib/sanitizeHtml";
 import { useToast } from "@/hooks/use-toast";
 
 type Tab = "pending" | "all";
