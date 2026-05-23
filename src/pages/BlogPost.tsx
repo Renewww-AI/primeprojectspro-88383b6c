@@ -196,7 +196,7 @@ const BlogPost = () => {
 
         <div
           className="prose-content text-lg text-muted-foreground leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: row.body_html }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(row.body_html) }}
         />
 
         <div className="mt-16 bg-card border border-border rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
