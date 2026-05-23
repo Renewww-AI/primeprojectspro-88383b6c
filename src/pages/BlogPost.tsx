@@ -25,15 +25,13 @@ const BlogPost = () => {
     (async () => {
       setCommunityLoading(true);
       const { data } = await supabase
-        .from("blog_submissions")
+        .from("public_blog_posts" as any)
         .select("*")
         .eq("slug", slug)
-        .eq("status", "approved")
-        .eq("published", true)
         .maybeSingle();
       setCommunityLoading(false);
       if (!data) { setCommunityNotFound(true); return; }
-      setCommunityRow(data as CommunityRow);
+      setCommunityRow(data as unknown as CommunityRow);
     })();
   }, [slug, post]);
 
