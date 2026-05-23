@@ -39,12 +39,10 @@ const Blog = () => {
   useEffect(() => {
     (async () => {
       const { data } = await supabase
-        .from("blog_submissions")
+        .from("public_blog_posts" as any)
         .select("*")
-        .eq("status", "approved")
-        .eq("published", true)
         .order("published_at", { ascending: false });
-      if (data) setCommunity((data as CommunityRow[]).map(rowToBlogPost));
+      if (data) setCommunity((data as unknown as CommunityRow[]).map(rowToBlogPost));
     })();
   }, []);
 
