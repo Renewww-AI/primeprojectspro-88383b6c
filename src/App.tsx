@@ -23,13 +23,14 @@ import Terms from "./pages/Terms.tsx";
 import DebugLogos from "./pages/DebugLogos.tsx";
 
 const queryClient = new QueryClient();
+const routerBasename = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
