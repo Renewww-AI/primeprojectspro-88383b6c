@@ -33,6 +33,7 @@ jobs:
         run: bun run build
         env:
           GITHUB_PAGES: "true"
+          VITE_BASE_PATH: "/"
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://qrjnldwcznttmwrtqste.supabase.co' }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFyam5sZHdjem50dG13cnRxc3RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTc3MzksImV4cCI6MjA5MjUzMzczOX0.E54bD4Ta6FOEAMbZP2RFUkwlsrVXl3GhkaYmJxvZAgQ' }}
           VITE_SUPABASE_PROJECT_ID: ${{ secrets.VITE_SUPABASE_PROJECT_ID || 'qrjnldwcznttmwrtqste' }}
