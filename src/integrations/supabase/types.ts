@@ -139,7 +139,60 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      public_blog_posts: {
+        Row: {
+          author_bio: string | null
+          author_city: string | null
+          author_name: string | null
+          body_html: string | null
+          category: string | null
+          cover_image_url: string | null
+          id: string | null
+          published: boolean | null
+          published_at: string | null
+          read_time: string | null
+          reviewed_at: string | null
+          slug: string | null
+          status: Database["public"]["Enums"]["submission_status"] | null
+          submitted_at: string | null
+          title: string | null
+        }
+        Insert: {
+          author_bio?: string | null
+          author_city?: string | null
+          author_name?: string | null
+          body_html?: string | null
+          category?: string | null
+          cover_image_url?: string | null
+          id?: string | null
+          published?: boolean | null
+          published_at?: string | null
+          read_time?: string | null
+          reviewed_at?: string | null
+          slug?: string | null
+          status?: Database["public"]["Enums"]["submission_status"] | null
+          submitted_at?: string | null
+          title?: string | null
+        }
+        Update: {
+          author_bio?: string | null
+          author_city?: string | null
+          author_name?: string | null
+          body_html?: string | null
+          category?: string | null
+          cover_image_url?: string | null
+          id?: string | null
+          published?: boolean | null
+          published_at?: string | null
+          read_time?: string | null
+          reviewed_at?: string | null
+          slug?: string | null
+          status?: Database["public"]["Enums"]["submission_status"] | null
+          submitted_at?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_role: {
