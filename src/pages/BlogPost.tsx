@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { getBlogPost, getRelatedPosts } from "@/data/blog";
 import { supabase } from "@/integrations/supabase/client";
 import { CommunityRow } from "@/lib/community";
+import { sanitizeHtml } from "@/lib/sanitizeHtml";
 
 const initials = (name: string) =>
   name.split(/\s+/).filter(Boolean).slice(0, 2).map((n) => n[0]?.toUpperCase()).join("");
